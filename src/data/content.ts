@@ -42,7 +42,7 @@ export const about = {
   education: [
     {
       school: "New York University — Tandon School of Engineering",
-      degree: "B.S. in Computer Science & Mathematics",
+      degree: "B.S. in Computer Science",
       meta: "Incoming Transfer Student · Expected May 2028",
       honors: [],
       courses: [],
