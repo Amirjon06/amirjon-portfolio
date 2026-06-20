@@ -31,7 +31,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amirjon.dev"),
+  metadataBase: new URL("https://amirjonabd.com"),
   title: "Amirjon Abdunayimov — Software Engineer",
   description:
     "Portfolio of Amirjon Abdunayimov — Software Engineer focused on AI systems, cloud infrastructure, and scalable applications. CS @ NYU Tandon.",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Amirjon Abdunayimov — Software Engineer",
     description: "Building AI systems, developer tools, and scalable software.",
-    url: "https://amirjon.dev",
+    url: "https://amirjonabd.com",
     siteName: "Amirjon Abdunayimov",
     type: "website",
     images: ["/images/og-image.png"],
