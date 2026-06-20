@@ -1,65 +1,202 @@
 # Amirjon Abdunayimov — Software Engineering Portfolio
 
-A modern, production-ready portfolio built with **Next.js**, **TypeScript**, and **Tailwind CSS** to showcase my software engineering projects, technical experience, and leadership.
+<p align="center">
+  <a href="https://amirjonabd.com">
+    <img src="https://img.shields.io/badge/Live%20Website-amirjonabd.com-0ea5e9?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/Amirjon06">
+    <img src="https://img.shields.io/github/stars/Amirjon06?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/Amirjon06">
+    <img src="https://img.shields.io/github/license/Amirjon06?style=for-the-badge" />
+  </a>
+</p>
 
-Designed from the ground up, the portfolio combines modern UI/UX with practical engineering features, including a custom 3D hero, dynamic theming, interactive project pages, a production-ready contact system, and a private analytics dashboard.
+A modern software engineering portfolio built with **Next.js 15**, **React**, **TypeScript**, and **Tailwind CSS**.
 
-**Live Demo:** https://your-domain.com
+The portfolio showcases my software engineering projects, cloud infrastructure work, AI experience, technical leadership, and professional journey through a highly interactive, production-ready web application.
 
----
+**Live Website**
 
-## Features
-
-* Modern responsive interface
-* Interactive 3D hero built with React Three Fiber
-* Dynamic theme switching
-* Animated project showcase
-* Production-ready contact form powered by Resend
-* Private analytics dashboard
-* Custom visitor tracking
-* SEO optimized
-* Fully responsive across desktop, tablet, and mobile
-
----
-
-## Tech Stack
-
-| Category    | Technologies                |
-| ----------- | --------------------------- |
-| Framework   | Next.js (App Router)        |
-| Language    | TypeScript                  |
-| Styling     | Tailwind CSS                |
-| Animation   | Framer Motion               |
-| 3D Graphics | React Three Fiber, Three.js |
-| Email       | Resend                      |
-| Database    | Upstash Redis               |
-| Charts      | Recharts                    |
-| Deployment  | Vercel                      |
+➡️ **https://amirjonabd.com**
 
 ---
 
-## Getting Started
+# Preview
 
-Clone the repository.
+> Add screenshots here after uploading them to the repository.
+
+![Hero](./public/readme/hero.png)
+
+![About](./public/readme/about.png)
+
+---
+
+# Features
+
+- Modern responsive design
+- Fully custom UI/UX
+- Animated hero section
+- Interactive 3D branding
+- Dynamic galaxy background
+- Scroll-based section transitions
+- Professional experience timeline
+- Project showcase
+- Technical skills visualization
+- Contact form powered by Resend
+- Mobile-first responsive layout
+- SEO optimized
+- Accessibility improvements
+- Analytics integration
+- Performance optimized
+
+---
+
+# Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+### UI & Animation
+
+- Framer Motion
+- React Three Fiber
+- Three.js
+- Lucide Icons
+
+### Backend
+
+- Next.js API Routes
+- Resend Email API
+
+### Deployment
+
+- Vercel
+- Custom Domain (amirjonabd.com)
+
+---
+
+# Project Structure
+
+```text
+src/
+│
+├── app/
+├── components/
+├── data/
+├── hooks/
+├── lib/
+├── styles/
+└── types/
+
+public/
+```
+
+---
+
+# Sections
+
+- Hero
+- About
+- Experience
+- Projects
+- Skills
+- Contact
+
+Each section is built as an independent React component with reusable animations and shared styling.
+
+---
+
+# Highlights
+
+### Interactive Hero
+
+- Animated introduction
+- Responsive layout
+- Call-to-action buttons
+- Custom branding
+
+### About
+
+- Professional profile
+- Education timeline
+- Technical focus
+- Career highlights
+
+### Experience
+
+- Professional timeline
+- Technical achievements
+- Metrics
+- Leadership experience
+
+### Projects
+
+- Featured software projects
+- GitHub integration
+- Live demos
+- Technology stack
+
+### Skills
+
+- Languages
+- Frameworks
+- Cloud
+- DevOps
+- AI
+- Software Engineering
+
+### Contact
+
+- Production email form
+- Resend integration
+- Direct links
+- Responsive design
+
+---
+
+# Performance
+
+- Responsive across all devices
+- Optimized images
+- Lazy loading
+- Server-side rendering
+- Lighthouse optimized
+- Production deployment
+
+---
+
+# Local Development
+
+Clone the repository
 
 ```bash
 git clone https://github.com/Amirjon06/portfolio.git
+```
+
+Enter the project
+
+```bash
 cd portfolio
 ```
 
-Install dependencies.
+Install dependencies
 
 ```bash
 npm install
 ```
 
-Run the development server.
+Run locally
 
 ```bash
 npm run dev
 ```
 
-Open:
+Open
 
 ```
 http://localhost:3000
@@ -67,70 +204,53 @@ http://localhost:3000
 
 ---
 
-## Environment Variables
+# Deployment
 
-Create a `.env.local` file in the project root.
+The portfolio is deployed on **Vercel** using a custom domain.
 
-```env
-RESEND_API_KEY=
-UPSTASH_REDIS_REST_URL=
-UPSTASH_REDIS_REST_TOKEN=
-ANALYTICS_PASSWORD=
-```
+**Production**
+
+https://amirjonabd.com
 
 ---
 
-## Project Structure
+# Future Improvements
 
-```text
-src/
-├── app/
-├── components/
-├── data/
-├── lib/
-├── hooks/
-├── public/
-└── styles/
-```
+- Blog
+- Case studies
+- Dark/light theme customization
+- Internationalization
+- CMS integration
+- Project filtering
+- Visitor analytics dashboard
+- Interactive project demos
 
 ---
 
-## Highlights
+# Contact
 
-* Built with the Next.js App Router
-* Component-based architecture
-* Centralized content management
-* Type-safe development with TypeScript
-* Reusable UI system
-* Optimized for performance and accessibility
-* Clean, maintainable codebase
+**Website**
 
----
+https://amirjonabd.com
 
-## Deployment
+**LinkedIn**
 
-The project is optimized for deployment on **Vercel**.
+https://linkedin.com/in/amirjon-abd
 
-```bash
-npm run build
-```
+**GitHub**
 
----
+https://github.com/Amirjon06
 
-## Contact
+**Email**
 
-**Portfolio:** https://your-domain.com
-
-**LinkedIn:** https://linkedin.com/in/amirjon-abd
-
-**GitHub:** https://github.com/Amirjon06
-
-**Email:** [amirjonabd5@gmail.com](mailto:amirjonabd5@gmail.com)
+amirjonabd5@gmail.com
 
 ---
 
 ## License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
-The portfolio content, résumé, and personal branding are © Amirjon Abdunayimov and may not be reused without permission.
+---
+
+Built by **Amirjon Abdunayimov**
