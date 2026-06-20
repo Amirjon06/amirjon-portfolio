@@ -34,8 +34,8 @@ export default function ScrollBackground() {
     let nebula: Neb[] = [];
 
     function rebuild() {
-      W = c.width = window.innerWidth;
-      H = c.height = window.innerHeight;
+      W = c!.width = window.innerWidth;
+      H = c!.height = window.innerHeight;
 
       layers = FACTORS.map((_, li) => {
         const count = li === 0 ? 170 : li === 1 ? 95 : 50;
@@ -75,7 +75,7 @@ export default function ScrollBackground() {
       const cc = col();
       mx += (targetMX - mx) * 0.05;
       my += (targetMY - my) * 0.05;
-      g.clearRect(0, 0, W, H);
+      g!.clearRect(0, 0, W, H);
 
       // drifting nebula clouds (subtle, theme-colored)
       nebula.forEach((n) => {
@@ -87,12 +87,12 @@ export default function ScrollBackground() {
         if (n.y > H + n.r) n.y = -n.r;
         const ox = -mx * 24,
           oy = -my * 24;
-        const gr = g.createRadialGradient(n.x + ox, n.y + oy, 0, n.x + ox, n.y + oy, n.r);
+        const gr = g!.createRadialGradient(n.x + ox, n.y + oy, 0, n.x + ox, n.y + oy, n.r);
         gr.addColorStop(0, `rgba(${cc},0.05)`);
         gr.addColorStop(0.45, `rgba(${cc},0.015)`);
         gr.addColorStop(1, `rgba(${cc},0)`);
-        g.fillStyle = gr;
-        g.fillRect(0, 0, W, H);
+        g!.fillStyle = gr;
+        g!.fillRect(0, 0, W, H);
       });
 
       // parallax starfield
@@ -106,18 +106,18 @@ export default function ScrollBackground() {
           const a = (0.22 + li * 0.22) * (0.5 + tw * 0.5);
           const x = s.x + ox,
             y = s.y + oy;
-          g.beginPath();
-          g.arc(x, y, s.r, 0, Math.PI * 2);
-          g.fillStyle = `rgba(${cc},${a})`;
-          g.fill();
+          g!.beginPath();
+          g!.arc(x, y, s.r, 0, Math.PI * 2);
+          g!.fillStyle = `rgba(${cc},${a})`;
+          g!.fill();
           if (li === 2 && tw > 0.82) {
-            const halo = g.createRadialGradient(x, y, 0, x, y, s.r * 6);
+            const halo = g!.createRadialGradient(x, y, 0, x, y, s.r * 6);
             halo.addColorStop(0, `rgba(${cc},${a * 0.4})`);
             halo.addColorStop(1, `rgba(${cc},0)`);
-            g.beginPath();
-            g.arc(x, y, s.r * 6, 0, Math.PI * 2);
-            g.fillStyle = halo;
-            g.fill();
+            g!.beginPath();
+            g!.arc(x, y, s.r * 6, 0, Math.PI * 2);
+            g!.fillStyle = halo;
+            g!.fill();
           }
         });
       });
