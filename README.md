@@ -1,134 +1,250 @@
 # Amirjon Abdunayimov — Portfolio
 
-A production-grade, interactive 3D developer portfolio built with Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, React Three Fiber, and Mermaid.js.
+A production-grade personal portfolio for a software engineer, built with the
+Next.js App Router and TypeScript. It pairs a polished, theme-switchable marketing
+site with real backend functionality: a working contact form that delivers email,
+and a private, password-protected analytics dashboard that tracks visitor activity.
 
-## Stack
+**Live site:** _add your deployment URL here_
 
-- **Next.js 14** (App Router) + **TypeScript**
-- **Tailwind CSS** for styling
-- **Framer Motion** for scroll/page animation
-- **React Three Fiber / drei / three.js** for the 3D developer desk scene (lazy-loaded, client-only)
-- **Mermaid.js** for project architecture diagrams (lazy-loaded)
-- **@vercel/analytics** for visitor analytics
-- **next/font** (Space Grotesk, Inter, JetBrains Mono)
+---
 
-## Project structure
+## Overview
+
+This repository is a single Next.js application that serves both the public-facing
+portfolio and the internal tooling behind it. The public site presents an
+interactive hero (a 3D logo rendered with React Three Fiber and a sequenced
+typewriter), plus dedicated sections for about, experience, skills, projects, and
+leadership. Behind the scenes, a lightweight analytics pipeline records page views,
+resume downloads, and link clicks, and surfaces them on a gated `/dashboard`.
+
+The goal was to build something beyond a static template — a site with genuine
+moving parts (3D, animation, email delivery, first-party analytics) while keeping
+the codebase clean, typed, and easy to maintain from a single content file.
+
+## Problem it solves
+
+Most developer portfolios are either static templates with no real functionality,
+or they hand off core features (contact, analytics) to third-party embeds. This
+project keeps those features first-party and under the developer's control:
+
+- **Contact** goes through an owned API route and a transactional email provider,
+  not a form-service iframe.
+- **Analytics** are collected by a small internal pipeline and viewed on a private
+  dashboard, instead of relying solely on an external console.
+- **Content** lives in one typed file, so updating copy across the entire site is a
+  single edit rather than a hunt through components.
+
+## Key features
+
+- **Interactive 3D hero** — a glossy extruded logo built with React Three Fiber and
+  drei, with orbit controls and theme-reactive materials.
+- **Sequenced typewriter** — hero text types itself on each load, with a reduced-motion-aware fallback.
+- **Multi-palette theming** — multiple color themes switch live at runtime; all
+  accent colors are driven by CSS variables and bound through Tailwind.
+- **Parallax background** — a mouse-reactive starfield with drifting nebula layers,
+  rendered on canvas.
+- **Working contact form** — submissions are delivered to an inbox via Resend, with
+  server-side validation and HTML/plain-text email bodies.
+- **Private analytics dashboard** — a password-gated `/dashboard` showing visitor
+  counts, resume downloads, link clicks, traffic over time, and a recent-activity
+  feed, built with Recharts.
+- **Content-driven** — all site copy (bio, experience, projects, skills, leadership)
+  lives in `src/data/content.ts`.
+- **SEO-ready** — metadata, Open Graph tags, a generated sitemap, and `robots.txt`.
+
+## Architecture overview
+
+The application uses the Next.js App Router. Pages are server components by default;
+interactive pieces (3D, animation, the dashboard) are client components, and the
+heaviest visuals are dynamically imported so they don't bloat the initial bundle.
+
+Analytics flow first-party:
+
+```
+Client event (page view, resume download, link click)
+        │
+        ▼
+src/lib/analytics.ts  ──POST──▶  /api/track  ──▶  src/lib/store.ts
+                                                     │
+/dashboard ──password──▶ /api/analytics ──▶ src/lib/aggregate.ts ──▶ charts
+```
+
+`src/lib/store.ts` persists events to Upstash Redis when configured, and falls back
+to in-memory storage otherwise. The contact form posts to `/api/contact`, which
+sends mail through Resend.
+
+## Tech stack
+
+| Area | Technology |
+|------|------------|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| 3D | React Three Fiber, drei, three.js |
+| Smooth scroll | Lenis |
+| Diagrams | Mermaid |
+| Charts | Recharts |
+| Email | Resend |
+| Storage | Upstash Redis (optional) |
+| Analytics | Vercel Analytics + first-party pipeline |
+| Icons | lucide-react, react-icons |
+| Fonts | Space Grotesk, Inter, JetBrains Mono (`next/font`) |
+
+## Folder structure
 
 ```
 src/
   app/
-    layout.tsx        # fonts, metadata, <Analytics/>
-    page.tsx           # assembles all sections
-    sitemap.ts
-    api/contact/route.ts  # contact form handler
-    globals.css
+    layout.tsx            # fonts, metadata, global chrome, analytics
+    page.tsx              # home page (assembles hero + sections)
+    globals.css           # base styles and CSS variables
+    sitemap.ts            # generated sitemap
+    about/                # /about
+    experience/           # /experience
+    skills/               # /skills
+    projects/             # /projects (+ cipherforge, ghostmirror case studies)
+    leadership/           # /leadership
+    contact/              # /contact
+    dashboard/            # /dashboard (private, password-gated)
+    api/
+      contact/route.ts    # contact form handler (Resend)
+      track/route.ts      # records analytics events
+      analytics/route.ts  # returns aggregated stats (password-checked)
   components/
-    Nav.tsx
-    Hero.tsx           # typing animation + 3D desk
-    About.tsx
-    Experience.tsx
-    Projects.tsx       # case-study cards + Mermaid diagrams
-    Skills.tsx         # interactive tilt badges
-    Leadership.tsx
-    Blog.tsx
-    Contact.tsx
-    Footer.tsx
-    SectionHeading.tsx
-    Mermaid.tsx
-    3d/DeskScene.tsx   # R3F scene, dynamically imported (ssr: false)
+    Hero.tsx              # typewriter hero
+    HeroModel.tsx         # 3D logo (React Three Fiber)
+    Nav.tsx  Footer.tsx
+    ScrollBackground.tsx  # parallax galaxy background
+    SmoothScroll.tsx      # Lenis wrapper
+    AboutContent.tsx  ExperienceTimeline.tsx  ProjectsList.tsx
+    SkillsSection.tsx  SkillsBackground.tsx  SkillIcon.tsx
+    ContactContent.tsx
+    Mermaid.tsx           # client-side Mermaid renderer
+    Reveal.tsx            # scroll-reveal animation wrapper
+    SectionTheme.tsx      # per-section theme application
+    PageViewTracker.tsx   # fires analytics page views
+    3d/SkillsHero.tsx
+    experience/           # career constellation visualization
   data/
-    content.ts         # ALL resume copy lives here — edit this file to update content
+    content.ts            # ALL site copy lives here
   lib/
-    useTypingSequence.ts
+    theme.ts              # palette definitions + live switching
+    analytics.ts          # client event sender
+    store.ts              # event persistence (Upstash Redis / in-memory)
+    aggregate.ts          # turns raw events into dashboard stats
+    visitor.ts  device.ts # visitor + device helpers
 public/
-  images/profile.png   # your headshot
-  resume/Amirjon_Abdunayimov_Resume.pdf
+  images/profile.png      # headshot
+  images/logos/           # experience company logos
+  resume/                 # resume PDF
   robots.txt
 ```
 
-## 1. Local setup
+## Installation
+
+Requires **Node.js 18.17+** (Next.js 14 requirement).
 
 ```bash
+git clone https://github.com/Amirjon06/amirjon-portfolio.git
+cd amirjon-portfolio
 npm install
+```
+
+## Environment variables
+
+All environment variables are **optional** — the site runs without them, with the
+contact form and dashboard disabled or in-memory. See `.env.example`.
+
+| Variable | Purpose |
+|----------|---------|
+| `RESEND_API_KEY` | Enables contact-form email delivery via Resend. |
+| `ANALYTICS_PASSWORD` | Password for the private `/dashboard`. |
+| `UPSTASH_REDIS_REST_URL` | Persists analytics events across deploys (recommended in production). |
+| `UPSTASH_REDIS_REST_TOKEN` | Token paired with the Upstash URL. |
+| `NEXT_PUBLIC_GA_ID` | Optional Google Analytics (GA4) measurement ID. |
+
+Create a `.env.local` file in the project root and add any you need:
+
+```bash
+RESEND_API_KEY=your_resend_key
+ANALYTICS_PASSWORD=your_dashboard_password
+```
+
+> `.env.local` is gitignored and never committed.
+
+## Running locally
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000.
+Open [http://localhost:3000](http://localhost:3000). Restart the dev server after
+adding or changing environment variables.
 
-## 2. Updating content
+## Building for production
 
-Everything text-based — your bio, experience bullets, project case studies, skills, leadership, blog placeholders, contact links — lives in **`src/data/content.ts`**. Edit that one file to update copy across the whole site.
-
-## 3. Replacing your photo & resume
-
-- **Photo**: replace `public/images/profile.png` with your headshot (square works best, ~800x800px). The current file is your uploaded image — swap it any time, the `<Image>` component (`src/components/Hero.tsx`) will pick up the new file automatically.
-- **Resume**: replace `public/resume/Amirjon_Abdunayimov_Resume.pdf` with an updated PDF (keep the same filename, or update `profile.resumeFile` in `src/data/content.ts`).
-- **OG image** (optional, for social link previews): add `public/images/og-image.png` (1200x630px).
-
-## 4. Adding GitHub project links / live demos
-
-In `src/data/content.ts`, each entry in the `projects` array has a `github` field. Update it to the exact repo URL:
-
-```ts
-github: "https://github.com/Amirjon06/your-repo-name",
+```bash
+npm run build
+npm run start
 ```
 
-To add a live demo button, add a `liveUrl` field to the project object and render an extra link in `src/components/Projects.tsx` next to the "Code" button.
+`npm run lint` runs ESLint (`eslint-config-next`).
 
-To add project preview screenshots, drop images into `public/images/projects/` and reference them via a new `preview` field + `next/image` in `Projects.tsx`.
+## Deployment
 
-## 5. Architecture diagrams (Mermaid)
+The project is designed for Vercel:
 
-Each project's `mermaid` field in `content.ts` is a standard Mermaid flowchart string. Edit the diagram text directly — it renders client-side via `src/components/Mermaid.tsx`.
+1. Push the repository to GitHub.
+2. Import it at [vercel.com/new](https://vercel.com/new). The Next.js preset is
+   auto-detected — no custom build settings are required.
+3. Add any environment variables (from the table above) in the Vercel project
+   settings. `RESEND_API_KEY` is required for the contact form to work in
+   production; `.env.local` is not deployed.
+4. Deploy. Vercel Analytics begins collecting data automatically.
+5. Update `metadataBase` in `src/app/layout.tsx`, the sitemap base in
+   `src/app/sitemap.ts`, and `public/robots.txt` to your real domain.
 
-## 6. Analytics setup
+## Contact form
 
-### Vercel Analytics (default, already wired up)
-No configuration needed — once deployed to Vercel, visit your project's **Analytics** tab to see visitor count, pages viewed, device type, country/city-level location, and referrers.
+The contact form posts to `src/app/api/contact/route.ts`, which sends each
+submission to the site owner's inbox using [Resend](https://resend.com):
 
-### Google Analytics (optional, additional)
-1. Create a GA4 property and copy its Measurement ID (`G-XXXXXXXXXX`).
-2. Add it to `.env.local`:
-   ```
-   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-   ```
-3. In `src/app/layout.tsx`, add a `<Script>` tag (see comment block already in that file) loading `https://www.googletagmanager.com/gtag/js?id=...`.
+1. The route validates that `name`, `email`, and `message` are present.
+2. It sends a transactional email through the Resend SDK, with the visitor's email
+   set as `replyTo` so replies go straight back to them.
+3. The email includes both HTML and plain-text bodies, with user input
+   HTML-escaped to prevent injection.
 
-> Note: analytics will show aggregate, anonymized visitor data (page views, location at country/city level, device, referrer). You will only learn a visitor's identity if they submit the contact form.
+It uses Resend's shared `onboarding@resend.dev` sender, so no custom domain is
+required to start. After verifying a domain in Resend, update `FROM_EMAIL` in the
+route to send from your own address. If `RESEND_API_KEY` is not set, the route
+returns a clear error and no mail is sent.
 
-## 7. Contact form
+## Performance & design decisions
 
-The form posts to `src/app/api/contact/route.ts`, which currently logs submissions to the server console (visible in Vercel's function logs). To receive emails:
+- **Heavy visuals are deferred.** The 3D scenes and Mermaid diagrams are dynamically
+  imported and client-only, keeping the server-rendered bundle light.
+- **Optimized images.** Images use `next/image` for automatic format selection and
+  responsive sizing.
+- **Single source of content.** Centralizing copy in `src/data/content.ts` keeps
+  components presentational and makes updates low-risk.
+- **Theme as data.** Palettes are defined in `src/lib/theme.ts` and applied through
+  CSS variables, so a theme switch recolors the whole site — including 3D materials —
+  without re-rendering component trees.
+- **Reduced motion respected** globally via `globals.css`.
+- **Privacy.** Visitor analytics are aggregated and only visible on the
+  password-protected dashboard; they are never surfaced to visitors.
 
-1. `npm install resend`
-2. Add `RESEND_API_KEY` to your Vercel project's environment variables.
-3. Uncomment the Resend block in `src/app/api/contact/route.ts`.
+## Roadmap
 
-Alternatively, swap in a database (Vercel Postgres/Supabase) or a third-party form service (Formspree, Getform) — see comments in that file.
+- Verify a custom domain in Resend and send contact mail from a branded address.
+- Add automated tests and a CI workflow.
+- Expand the projects section with additional case studies and live demos.
+- Add Open Graph preview images per page.
 
-## 9. Private analytics dashboard (`/dashboard`)
+## License
 
-A password-protected dashboard at `/dashboard` shows total/unique/returning visitors, resume downloads, GitHub/LinkedIn clicks, contact submissions, most-viewed project, a 14-day traffic chart, traffic sources, device types, approximate locations, and a recent activity feed — all built with Recharts.
-
-**Setup:**
-1. Set `ANALYTICS_PASSWORD` in your environment variables (Vercel project settings -> Environment Variables). This is the only password — there's no separate user system.
-2. (Recommended for production) Create a free [Upstash](https://upstash.com) Redis database and add `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`. Without these, events are stored in-memory and may not persist across serverless instances/deploys on Vercel.
-3. Visit `/dashboard`, enter the password, and view live stats.
-
-**How it works:** `src/lib/analytics.ts` posts events (page views, resume downloads, link clicks, project views, contact submissions) to `/api/track`, which records them via `src/lib/store.ts`. `/api/analytics` checks the password and returns aggregated stats via `src/lib/aggregate.ts`. The page is marked `noindex` so it won't appear in search results — for stronger protection, also consider Vercel's password-protection / access-control features at the hosting level.
-
-## 10. Deploying to Vercel
-
-1. Push this repo to GitHub.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Framework preset: **Next.js** (auto-detected). No special build settings needed.
-4. Add any environment variables from `.env.example` (optional — site works without them).
-5. Deploy. Vercel Analytics will automatically start collecting data once live.
-6. (Optional) Update `metadataBase` in `src/app/layout.tsx` and the sitemap URL in `src/app/sitemap.ts` and `public/robots.txt` to your real domain.
-
-## Performance notes
-
-- The 3D desk scene and Mermaid diagrams are dynamically imported with `ssr: false` and only hydrate client-side, keeping the initial server-rendered bundle light.
-- Images use `next/image` for automatic optimization (AVIF/WebP, responsive sizes).
-- `prefers-reduced-motion` is respected globally (see `globals.css`).
-- Run `npm run build` and check the output, or `npx lighthouse` against a deployed URL, to verify Lighthouse scores.
+Released under the MIT License. The personal content, résumé, headshot, and
+company logos are not licensed for reuse.
