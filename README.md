@@ -1,29 +1,14 @@
 # Amirjon Abdunayimov — Software Engineering Portfolio
 
-<p align="center">
-  <a href="https://amirjonabd.com">
-    <img src="https://img.shields.io/badge/Live%20Website-amirjonabd.com-0ea5e9?style=for-the-badge" />
-  </a>
-  <a href="https://github.com/Amirjon06">
-    <img src="https://img.shields.io/github/license/Amirjon06?style=for-the-badge" />
-  </a>
-</p>
+A production-ready software engineering portfolio showcasing cloud infrastructure, AI-powered applications, full-stack development, and interactive web experiences.
 
-A modern software engineering portfolio built with **Next.js 15**, **React**, **TypeScript**, and **Tailwind CSS**.
+Built with **Next.js 15**, **React**, **TypeScript**, and **Tailwind CSS**.
 
-The portfolio showcases my software engineering projects, cloud infrastructure work, AI experience, technical leadership, and professional journey through a highly interactive, production-ready web application.
-
-**Live Website**
-
-➡️ **https://amirjonabd.com**
+**🌐 Live Website:** https://amirjonabd.com
 
 ---
 
 # Preview
-
-> Add screenshots here after uploading them to the repository.
-
-## Preview
 
 ![Hero](public/readme/Hero.png)
 
@@ -35,51 +20,58 @@ The portfolio showcases my software engineering projects, cloud infrastructure w
 
 ---
 
+# Overview
+
+This repository contains the source code for my personal software engineering portfolio.
+
+The application highlights my experience in software engineering, cloud infrastructure, DevOps, AI systems, and technical leadership through a modern, production-ready web application built with the latest React ecosystem.
+
+---
+
 # Features
 
-- Modern responsive design
-- Fully custom UI/UX
-- Animated hero section
-- Interactive 3D branding
-- Dynamic galaxy background
-- Scroll-based section transitions
-- Professional experience timeline
-- Project showcase
-- Technical skills visualization
-- Contact form powered by Resend
-- Mobile-first responsive layout
-- SEO optimized
-- Accessibility improvements
-- Analytics integration
-- Performance optimized
+* Next.js 15 App Router architecture
+* React Server Components
+* TypeScript throughout
+* Tailwind CSS design system
+* Interactive Three.js hero section
+* Framer Motion animations
+* Fully responsive mobile-first UI
+* Dynamic project showcase
+* Professional experience timeline
+* Contact form powered by Resend
+* SEO optimized
+* Accessibility improvements
+* Optimized performance
+* Analytics integration
 
 ---
 
 # Tech Stack
 
-### Frontend
+## Frontend
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
+* Next.js 15
+* React 19
+* TypeScript
+* Tailwind CSS
 
-### UI & Animation
+## UI & Animation
 
-- Framer Motion
-- React Three Fiber
-- Three.js
-- Lucide Icons
+* Framer Motion
+* React Three Fiber
+* Three.js
+* Lucide React
 
-### Backend
+## Backend
 
-- Next.js API Routes
-- Resend Email API
+* Next.js API Routes
+* Resend Email API
 
-### Deployment
+## Deployment
 
-- Vercel
-- Custom Domain (amirjonabd.com)
+* Vercel
+* Custom Domain (amirjonabd.com)
 
 ---
 
@@ -101,75 +93,66 @@ public/
 
 ---
 
-# Sections
+# Application Sections
 
-- Hero
-- About
-- Experience
-- Projects
-- Skills
-- Contact
+* Hero
+* About
+* Experience
+* Projects
+* Skills
+* Contact
 
-Each section is built as an independent React component with reusable animations and shared styling.
+Each section is implemented as an independent React component with reusable animations, shared styling, and modular architecture.
 
 ---
 
 # Highlights
 
-### Interactive Hero
+## Interactive Hero
 
-- Animated introduction
-- Responsive layout
-- Call-to-action buttons
-- Custom branding
+* Animated landing experience
+* Interactive branding
+* Responsive call-to-actions
+* Dynamic background effects
 
-### About
+## Professional Experience
 
-- Professional profile
-- Education timeline
-- Technical focus
-- Career highlights
+* Engineering timeline
+* Quantified technical achievements
+* Leadership experience
+* Internship highlights
 
-### Experience
+## Projects
 
-- Professional timeline
-- Technical achievements
-- Metrics
-- Leadership experience
+* Production-ready software projects
+* Live demonstrations
+* GitHub repositories
+* Modern technology stacks
 
-### Projects
+## Skills
 
-- Featured software projects
-- GitHub integration
-- Live demos
-- Technology stack
+* Programming Languages
+* Frameworks
+* Cloud & DevOps
+* Artificial Intelligence
+* Software Engineering
 
-### Skills
+## Contact
 
-- Languages
-- Frameworks
-- Cloud
-- DevOps
-- AI
-- Software Engineering
-
-### Contact
-
-- Production email form
-- Resend integration
-- Direct links
-- Responsive design
+* Production email integration
+* Direct social links
+* Responsive contact experience
 
 ---
 
 # Performance
 
-- Responsive across all devices
-- Optimized images
-- Lazy loading
-- Server-side rendering
-- Lighthouse optimized
-- Production deployment
+* Responsive across desktop, tablet, and mobile
+* Server-side rendering
+* Image optimization
+* Lazy loading
+* Lighthouse optimized
+* Production deployment on Vercel
 
 ---
 
@@ -193,15 +176,15 @@ Install dependencies
 npm install
 ```
 
-Run locally
+Run the development server
 
 ```bash
 npm run dev
 ```
 
-Open
+Open your browser:
 
-```
+```text
 http://localhost:3000
 ```
 
@@ -209,44 +192,31 @@ http://localhost:3000
 
 # Deployment
 
-The portfolio is deployed on **Vercel** using a custom domain.
+The application is deployed on **Vercel** using a custom domain.
 
-**Production**
-
-https://amirjonabd.com
+**Production:** https://amirjonabd.com
 
 ---
 
-# Future Improvements
+# Roadmap
 
-- Blog
-- Case studies
-- Dark/light theme customization
-- Internationalization
-- CMS integration
-- Project filtering
-- Visitor analytics dashboard
-- Interactive project demos
+* Technical blog
+* Project case studies
+* Interactive project demos
+* CMS integration
+* Visitor analytics dashboard
 
 ---
 
 # Contact
 
-**Website**
+**Website:** https://amirjonabd.com
 
-https://amirjonabd.com
+**LinkedIn:** https://linkedin.com/in/amirjon-abd
 
-**LinkedIn**
+**GitHub:** https://github.com/Amirjon06
 
-https://linkedin.com/in/amirjon-abd
-
-**GitHub**
-
-https://github.com/Amirjon06
-
-**Email**
-
-amirjonabd5@gmail.com
+**Email:** [amirjonabd5@gmail.com](mailto:amirjonabd5@gmail.com)
 
 ---
 
@@ -256,4 +226,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Built by **Amirjon Abdunayimov**
+Built with ❤️ by **Amirjon Abdunayimov**
