@@ -5,9 +5,6 @@
     <img src="https://img.shields.io/badge/Live%20Website-amirjonabd.com-0ea5e9?style=for-the-badge" />
   </a>
   <a href="https://github.com/Amirjon06">
-    <img src="https://img.shields.io/github/stars/Amirjon06?style=for-the-badge" />
-  </a>
-  <a href="https://github.com/Amirjon06">
     <img src="https://img.shields.io/github/license/Amirjon06?style=for-the-badge" />
   </a>
 </p>
@@ -26,9 +23,15 @@ The portfolio showcases my software engineering projects, cloud infrastructure w
 
 > Add screenshots here after uploading them to the repository.
 
-![Hero](./public/readme/hero.png)
+## Preview
 
-![About](./public/readme/about.png)
+![Hero](public/readme/Hero.png)
+
+![About](public/readme/About.png)
+
+![Experience](public/readme/Experience.png)
+
+![Projects](public/readme/Projects.png)
 
 ---
 
