@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aLogoRight" x1="32" y1="14" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6f8cff"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="aLogoLeft" x1="32" y1="14" x2="14" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b9caff"/>
+      <stop offset="1" stop-color="#6d6be0"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0A0E17"/>
+  <path d="M33.3 14 L51 50 L38.5 50 L33.3 30 Z" fill="url(#aLogoRight)"/>
+  <path d="M30.7 14 L13 50 L25.5 50 L30.7 30 Z" fill="url(#aLogoLeft)"/>
+  <path d="M32 15 L32 29" stroke="#dce6ff" stroke-width="2.4" stroke-linecap="round" opacity="0.75"/>
+</svg>
