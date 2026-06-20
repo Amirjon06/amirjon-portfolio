@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Theme CSS variables (defaults: cyan/amber) ──────────────── */
+:root {
+  --color-signal:   94,234,212;
+  --color-accent:   242,181,68;
+  --color-glow:     94,234,212;
+  --color-particle: 94,234,212;
+  --color-line:     94,234,212;
+  --hex-signal:     #5EEAD4;
+  --hex-accent:     var(--hex-signal, #5EEAD4);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0e17;
+  color: #e6eaf2;
+}
+
+/* Subtle grid background */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Section label, comment-style */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #5eead4;
+}
+
+.section-label::before {
+  content: "// ";
+  color: #525d75;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(22, 29, 43, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e17;
+}
+::-webkit-scrollbar-thumb {
+  background: #222b3d;
+  border-radius: 8px;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--hex-signal, #5EEAD4);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mermaid diagram theming */
+.mermaid-wrap svg {
+  max-width: 100%;
+  height: auto;
+}
