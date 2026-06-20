@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Mail, Github, Linkedin, ArrowUpRight, Send, MapPin, Check } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowUpRight, Send, MapPin, Check, Download } from "lucide-react";
 import { profile } from "@/data/content";
 import { trackEvent } from "@/lib/analytics";
 import Reveal from "./Reveal";
@@ -85,6 +85,25 @@ export default function ContactContent() {
                 </a>
               ))}
             </div>
+            {/* Download resume */}
+            <a            
+              href={profile.resumeFile}
+              download
+              onClick={() => trackEvent("resume_download", { source: "contact" })}
+              className="group mt-5 flex items-center justify-between rounded-2xl border border-signal/40 bg-signal/[0.06] px-5 py-5 shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-1 hover:border-signal/70 hover:bg-signal/[0.1] hover:shadow-xl hover:shadow-black/30"
+            >
+              <span className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-signal/20 text-signal">
+                  <Download size={18} />
+                </span>
+                <span className="flex flex-col">
+                  <span className="text-base font-medium text-ink">Download resume</span>
+                  <span className="text-xs text-muted">PDF</span>
+                </span>
+              </span>
+              <ArrowUpRight size={18} className="text-signal/70 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-signal" />
+            </a>
+
             <div className="mt-8 flex items-start gap-3 border-t border-white/5 pt-6">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/[0.04] text-signal">
                 <MapPin size={18} />
