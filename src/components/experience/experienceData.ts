@@ -1,13 +1,8 @@
-/**
- * experienceData.ts
- * Single source of truth for the Career Constellation.
- * Decoupled from content.ts so the constellation can have
- * richer metadata (metrics, skill levels, colors).
- */
+// Experience data for the portfolio timeline.
 
 export type Skill = {
   name: string;
-  level: number; // 0–1, used for orbit radius / glow intensity
+  level: number; // Skill level (0–1)
   color: string;
 };
 
@@ -19,8 +14,8 @@ export type ExperienceEntry = {
   location: string;
   dates: string;
   type: "internship" | "tutoring" | "freelance";
-  accent: string;       // primary glow color
-  accentDim: string;    // 20% opacity version for backgrounds
+  accent: string;     // Primary accent color
+  accentDim: string;  // Background accent color
   summary: string;
   bullets: { text: string; metric?: string }[];
   skills: Skill[];
@@ -28,6 +23,41 @@ export type ExperienceEntry = {
 };
 
 export const EXPERIENCES: ExperienceEntry[] = [
+  {
+    id: "octopilot",
+    role: "Software Engineering Intern",
+    company: "Octopilot AI",
+    shortCompany: "Octopilot AI",
+    location: "Remote",
+    dates: "June 2026 – Present",
+    type: "internship",
+    accent: "#c084fc",
+    accentDim: "rgba(192,132,252,0.12)",
+    summary:
+      "Engineered production-ready features for an AI-powered writing platform, building reusable Flutter infrastructure, designing AI interfaces, and leading engineering initiatives across the Doc Oc editor.",
+    bullets: [
+      {
+        text: "Engineered a persistent Flutter theme engine for the Doc Oc editor, synchronizing application state across 20+ UI components and eliminating 15+ cross-component regressions.",
+        metric: "20+ UI components",
+      },
+      {
+        text: "Designed production-ready AI Study Plan and Knowledge Graph interfaces using a reusable component architecture, structured Git workflows, and mock data suites.",
+        metric: "AI interfaces",
+      },
+      {
+        text: "Selected to lead a team of 4 developers for a targeted engineering sprint, coordinating task delegation and codebase integration to guarantee on-time delivery.",
+        metric: "Led 4 developers",
+      },
+  ],
+    skills: [
+      { name: "Flutter", level: 0.9, color: "#54C5F8" },
+      { name: "Dart", level: 0.85, color: "#0175C2" },
+      { name: "Git", level: 0.85, color: "#F1502F" },
+      { name: "UI Architecture", level: 0.9, color: "#c084fc" },
+      { name: "AI", level: 0.8, color: "#818cf8" },
+    ],
+    logo: "/images/logos/octopilot-ai.png",
+  },
   {
     id: "sound-of-earth",
     role: "DevOps & Cloud Infrastructure Intern",
@@ -39,47 +69,30 @@ export const EXPERIENCES: ExperienceEntry[] = [
     accent: "#5EEAD4",
     accentDim: "rgba(94,234,212,0.12)",
     summary:
-      "Worked on cloud infrastructure, CI/CD automation, containerized development environments, and real-time monitoring systems for climate data workflows and full-stack deployment pipelines.",
+      "Built cloud infrastructure and DevOps automation for distributed climate data systems, architecting CI/CD pipelines, monitoring platforms, and release workflows that improved engineering productivity and deployment reliability.",
     bullets: [
-      { text: "Designed Docker-based development infrastructure and GitHub Actions CI/CD workflows across Linux environments, reducing manual setup friction and improving developer productivity by ~25%.", metric: "~25% productivity gain" },
-      { text: "Built JavaScript/Python monitoring dashboards for climate data pipelines, exposing real-time service health, pipeline status, and system observability while reducing incident detection time by 35%.", metric: "35% faster detection" },
-      { text: "Implemented automated testing and Git-based release pipelines to harden deployment workflows, decreasing production bugs by 30–40% and improving release consistency.", metric: "30–40% fewer bugs" },
+      {
+        text: "Architected containerized CI/CD pipelines using Docker and GitHub Actions across Linux environments, automating multi-environment deployments to cut manual setup friction and boost velocity by 25%.",
+        metric: "25% faster delivery",
+      },
+      {
+        text: "Built Python and JavaScript monitoring dashboards for distributed climate data pipelines, exposing real-time service health and system observability to accelerate incident detection by 35%.",
+        metric: "35% faster detection",
+      },
+      {
+        text: "Implemented automated testing and Git-based workflows to harden release pipelines, mitigating production regressions by 40% and driving down engineering hotfix overhead.",
+        metric: "40% fewer regressions",
+      },
     ],
     skills: [
-      { name: "Docker",          level: 0.9, color: "#38bdf8" },
-      { name: "GitHub Actions",  level: 0.85, color: "#5EEAD4" },
-      { name: "Linux",           level: 0.8,  color: "#a3e635" },
-      { name: "Python",          level: 0.85, color: "#3776AB" },
-      { name: "JavaScript",      level: 0.8,  color: "#F7DF1E" },
-      { name: "CI/CD",           level: 0.9,  color: "#5EEAD4" },
+      { name: "Docker", level: 0.9, color: "#38bdf8" },
+      { name: "GitHub Actions", level: 0.85, color: "#5EEAD4" },
+      { name: "Linux", level: 0.8, color: "#a3e635" },
+      { name: "Python", level: 0.85, color: "#3776AB" },
+      { name: "JavaScript", level: 0.8, color: "#F7DF1E" },
+      { name: "CI/CD", level: 0.9, color: "#5EEAD4" },
     ],
     logo: "/images/logos/sound-of-earth.png",
-  },
-  {
-    id: "octopilot",
-    role: "Software Engineering Intern",
-    company: "Octopilot AI",
-    shortCompany: "Octopilot AI",
-    location: "Remote",
-    dates: "May 2026 – Present",
-    type: "internship",
-    accent: "#c084fc",
-    accentDim: "rgba(192,132,252,0.12)",
-    summary:
-      "Built and tested production-facing editor features for an AI-powered writing platform, contributing to frontend architecture, UI reliability, theme systems, and AI-assisted document workflows.",
-    bullets: [
-      { text: "Developed and deployed a Light/Dark Mode feature for Doc Oct, implementing persistent theme preferences and styling updates across 20+ editor components.", metric: "20+ components updated" },
-      { text: "Debugged and verified 15+ AI-powered writing features, identifying performance bottlenecks and cross-component regressions to ensure production stability.", metric: "15+ features tested" },
-      { text: "Contributed to shared editor workflow improvements, refining styling and interaction patterns across document editing and AI-assisted writing components.", metric: "Shared components improved" },
-    ],
-    skills: [
-      { name: "LLMs",            level: 0.85, color: "#c084fc" },
-      { name: "Agent Systems",   level: 0.8,  color: "#818cf8" },
-      { name: "AI Evaluation",   level: 0.9,  color: "#f472b6" },
-      { name: "Product Research",level: 0.75, color: "#fb923c" },
-      { name: "Automation",      level: 0.8,  color: "#c084fc" },
-    ],
-    logo: "/images/logos/octopilot-ai.png",
   },
   {
     id: "kingsborough",
@@ -87,23 +100,32 @@ export const EXPERIENCES: ExperienceEntry[] = [
     company: "Kingsborough Community College Learning Center",
     shortCompany: "KCC Learning Center",
     location: "Brooklyn, NY",
-    dates: "May 2026 – Present",
+    dates: "March 2026 – Present",
     type: "tutoring",
     accent: "#60a5fa",
     accentDim: "rgba(96,165,250,0.12)",
     summary:
-      "Mentored students in computer science and mathematics, translating complex technical concepts into practical problem-solving strategies while developing debugging, analytical reasoning, and computational thinking skills.",
+      "Mentored computer science and mathematics students through structured technical instruction, helping them strengthen algorithmic thinking, debugging skills, and software engineering fundamentals.",
     bullets: [
-      { text: "Led 100+ technical tutoring sessions for 50+ students, strengthening debugging, computational thinking, algorithmic reasoning, and structured problem-solving.", metric: "100+ sessions led" },
-      { text: "Coached students through C++/Python debugging, algorithm design, recursion, control flow, arrays, and core software engineering fundamentals.", metric: "C++/Python" },
-      { text: "Translated complex technical concepts into structured, step-by-step workflows, enabling students to debug code, analyze problems, and build independent problem-solving skills.", metric: "Technical mentorship" },
+      {
+        text: "Mentored 50+ students in algorithmic reasoning and data structures across 100+ technical sessions, accelerating their system implementation and debugging velocity.",
+        metric: "100+ sessions",
+      },
+      {
+        text: "Designed structured, step-by-step learning exercises covering core paradigms—including recursion, object-oriented programming, and control flow—to bridge the gap between requirements and maintainable code.",
+        metric: "Core CS concepts",
+      },
+      {
+        text: "Coached peers through complex debugging workflows in Python and C++, training them to isolate runtime defects and systematically trace execution paths.",
+        metric: "Python & C++",
+      },
     ],
     skills: [
-      { name: "Debugging",               level: 0.95, color: "#60a5fa" },
-      { name: "Computational Thinking",  level: 0.90, color: "#38bdf8" },
-      { name: "Problem Solving",         level: 0.95, color: "#34d399" },
-      { name: "Teaching",                level: 0.95, color: "#60a5fa" },
-      { name: "Mentorship",              level: 0.90, color: "#a78bfa" },
+      { name: "Python", level: 0.9, color: "#3776AB" },
+      { name: "C++", level: 0.85, color: "#00599C" },
+      { name: "Algorithms", level: 0.9, color: "#34d399" },
+      { name: "Debugging", level: 0.95, color: "#60a5fa" },
+      { name: "OOP", level: 0.85, color: "#a78bfa" },
     ],
     logo: "/images/logos/kingsborough.png",
   },
