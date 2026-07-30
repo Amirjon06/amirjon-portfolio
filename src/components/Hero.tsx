@@ -141,10 +141,10 @@ export default function Home() {
                 caret
                 onDone={() => setStage((s) => Math.max(s, 3))}
                 segments={[
-                  { text: "Software engineer building production-grade systems with " },
-                  { text: "full-stack expertise", color: SIG },
+                  { text: "Software engineer building scalable " },
+                  { text: "full-stack applications", color: SIG },
                   { text: ", " },
-                  { text: "AI tools", color: ACC },
+                  { text: "AI-powered tools", color: ACC },
                   { text: ", and " },
                   { text: "cloud infrastructure", color: SIG },
                   { text: "." },
@@ -152,8 +152,7 @@ export default function Home() {
               />
             ) : (
               <span className="opacity-0">
-                Software engineer building production-grade systems with full-stack
-                expertise, AI tools, and cloud infrastructure.
+                Software engineer building scalable full-stack applications, AI-powered tools, and cloud infrastructure.
               </span>
             )}
           </p>
@@ -167,7 +166,7 @@ export default function Home() {
                 segments={[
                   {
                     text:
-                      "I design and ship scalable applications, developer platforms, and AI-powered tools that solve real problems. Clean architecture, performance, and maintainability are at the core of everything I build.",
+                      "I design and build scalable applications, developer tools, and cloud-native systems with a focus on clean architecture, performance, and long-term maintainability.",
                   },
                 ]}
               />
