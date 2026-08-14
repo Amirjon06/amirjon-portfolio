@@ -24,39 +24,39 @@ export type ExperienceEntry = {
 
 export const EXPERIENCES: ExperienceEntry[] = [
   {
-    id: "octopilot",
+    id: "boardwalk-labs",
     role: "Software Engineering Intern",
-    company: "Octopilot AI",
-    shortCompany: "Octopilot AI",
+    company: "Boardwalk Labs",
+    shortCompany: "Boardwalk Labs",
     location: "Remote",
     dates: "June 2026 – Present",
     type: "internship",
     accent: "#c084fc",
     accentDim: "rgba(192,132,252,0.12)",
     summary:
-      "Engineered production-ready features for an AI-powered writing platform, building reusable Flutter infrastructure, designing AI interfaces, and leading engineering initiatives across the Doc Oc editor.",
+      "Leading frontend architecture for OctoPilot AI, an AI-powered learning platform — building reusable Flutter infrastructure, LLM pipelines, and Git-based team standards.",
     bullets: [
       {
-        text: "Engineered a persistent Flutter theme engine for the Doc Oc editor, synchronizing application state across 20+ UI components and eliminating 15+ cross-component regressions.",
-        metric: "20+ UI components",
+        text: "Led the frontend architecture for OctoPilot AI, building a reusable UI engine across 20+ core Flutter components to eliminate 15+ cross-component regressions.",
+        metric: "20+ Flutter components",
       },
       {
-        text: "Designed production-ready AI Study Plan and Knowledge Graph interfaces using a reusable component architecture, structured Git workflows, and mock data suites.",
-        metric: "AI interfaces",
+        text: "Designed and deployed LLM pipelines and automated text-extraction modules in Python, establishing semantic knowledge graphs that cut manual processing times by 40%.",
+        metric: "40% less manual processing",
       },
       {
-        text: "Selected to lead a team of 4 developers for a targeted engineering sprint, coordinating task delegation and codebase integration to guarantee on-time delivery.",
-        metric: "Led 4 developers",
+        text: "Spearheaded Git-based integration standards across a 5-engineer team, streamlining production-ready releases across 10+ AI learning modules.",
+        metric: "5-engineer team",
       },
   ],
     skills: [
       { name: "Flutter", level: 0.9, color: "#54C5F8" },
       { name: "Dart", level: 0.85, color: "#0175C2" },
+      { name: "Python", level: 0.85, color: "#3776AB" },
       { name: "Git", level: 0.85, color: "#F1502F" },
-      { name: "UI Architecture", level: 0.9, color: "#c084fc" },
-      { name: "AI", level: 0.8, color: "#818cf8" },
+      { name: "LLM Pipelines", level: 0.8, color: "#818cf8" },
     ],
-    logo: "/images/logos/octopilot-ai.png",
+    logo: "/images/logos/boardwalk-labs.png",
   },
   {
     id: "sound-of-earth",

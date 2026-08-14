@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/about", "/experience", "/projects", "/projects/cipherforge", "/projects/ghostmirror", "/skills", "/leadership", "/contact"];
+  const routes = ["", "/about", "/experience", "/projects", "/projects/cipherforge", "/projects/ghostmirror", "/projects/staterelay", "/projects/patient-voice-bot", "/skills", "/leadership", "/contact"];
   return routes.map((route) => ({
     url: `https://amirjonabd.com${route}`,
     lastModified: new Date(),

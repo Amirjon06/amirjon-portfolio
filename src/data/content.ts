@@ -42,7 +42,7 @@ export const about = {
   education: [
     {
       school: "New York University — Tandon School of Engineering",
-      degree: "B.S. in Computer Science",
+      degree: "B.S. in Computer Science (Minor in Mathematics)",
       meta: "Incoming Transfer Student · Expected May 2028",
       honors: [],
       courses: [],
@@ -87,19 +87,20 @@ export const experience = [
     logo: "/images/logos/sound-of-earth.png",
   },
   {
-    company: "Octopilot AI",
-    role: "AI Ambassador Intern",
+    company: "Boardwalk Labs",
+    role: "Software Engineering Intern",
     location: "Remote",
-    dates: "May 2026 – Present",
+    dates: "June 2026 – Present",
     summary:
-      "Evaluating AI-powered automation features and feeding findings back into product decisions for an agent-driven automation platform.",
+      "Leading frontend architecture for OctoPilot AI and building the LLM pipelines behind its AI learning modules.",
     bullets: [
-      "Tested and evaluated AI-powered workflow automation features across agent-driven systems, documenting usability issues and edge cases.",
-      "Researched competing AI platforms and summarized findings for the product team to inform prioritization and UX decisions.",
-      "Contributed feedback to LLM-powered automation features focused on scalability and real-world business use cases.",
+      "Led the frontend architecture for OctoPilot AI, building a reusable UI engine across 20+ core Flutter components to eliminate 15+ cross-component regressions.",
+      "Designed and deployed LLM pipelines and automated text-extraction modules in Python, establishing semantic knowledge graphs that cut manual processing times by 40%.",
+      "Spearheaded Git-based integration standards across a 5-engineer team, streamlining production-ready releases across 10+ AI learning modules.",
+      "Optimized cross-platform application state by implementing a persistent theme engine, driving visual and interface consistency across the entire user environment.",
     ],
-    tags: ["LLMs", "Agent Systems", "Automation", "Product Research"],
-    logo: "/images/logos/octopilot-ai.png",
+    tags: ["Flutter", "Python", "LLM Pipelines", "Git", "UI Architecture"],
+    logo: "/images/logos/boardwalk-labs.png",
   },
   {
     company: "Kingsborough Community College Learning Center",
@@ -231,7 +232,80 @@ export const inProgressProject = {
   github: "https://github.com/Amirjon06",
 };
 
-export const projects = [featuredProject, inProgressProject];
+export const stateRelayProject = {
+  slug: "staterelay",
+  name: "StateRelay",
+  tagline: "Cross-Platform Distributed Workspace State Synchronization",
+  status: "Completed",
+  oneLiner:
+    "A background agent and CLI that captures your Git and editor state and securely syncs it across your machines.",
+  problem:
+    "Developers constantly switch machines — desk, laptop, home — and lose context every time: which branch was active, what was uncommitted, which files and tabs were open.",
+  challenges: [
+    "Capturing accurate Git repository state — active branches and uncommitted diffs — into a portable session schema",
+    "Zero-configuration device discovery on local networks using mDNS",
+    "Securing device-to-device transfer with mutual TLS instead of relying on a cloud relay",
+    "Restoring editor state (tabs, layouts, cursor positions) via VS Code and Browser APIs across macOS, Linux, and Windows",
+  ],
+  solution:
+    "A cross-platform Go background agent and CLI that captures local Git repository state, active branches, and uncommitted file diffs into portable JSON session schemas, then transfers them directly between paired devices over a local network using mDNS discovery and mutual TLS — with zero configuration and no cloud dependency.",
+  stack: ["Go", "TypeScript", "SQLite", "mDNS", "mTLS", "Git"],
+  architectureNote:
+    "A Go background agent and CLI capture Git repository state into portable JSON session schemas. mDNS handles zero-configuration device discovery on the local network, and mutual TLS secures the direct device-to-device transfer. TypeScript extensions using the VS Code and Browser APIs extract and restore active editor layouts, cursor positions, and tabs across macOS, Linux, and Windows.",
+  mermaid: `flowchart LR
+  A["Go Background Agent"] --> B["CLI"]
+  A --> C["Git State Capture"]
+  C --> D["Portable JSON Session Schema"]
+  D --> E["mDNS Discovery"]
+  E --> F["mTLS Transfer Layer"]
+  F --> G["Paired Device Agent"]`,
+  highlights: [
+    "Cross-platform Go background agent and CLI for Git repository state capture",
+    "Zero-configuration device pairing via mDNS discovery and mutual TLS",
+    "TypeScript VS Code and Browser extensions for editor state restoration",
+    "Complete state restoration across Linux, macOS, and Windows",
+  ],
+  github: "https://github.com/Amirjon06",
+  liveDemo: null as string | null,
+};
+
+export const patientVoiceBotProject = {
+  slug: "patient-voice-bot",
+  name: "Patient Voice Bot",
+  tagline: "Real-Time AI Voice Agent Tester",
+  status: "Completed",
+  oneLiner:
+    "A real-time voice agent that simulates patient calls to stress-test scheduling and QA workflows.",
+  problem:
+    "Testing conversational AI voice agents against realistic patient scenarios — scheduling, insurance questions, edge cases — is normally a slow, manual process requiring a human to place and evaluate every test call.",
+  challenges: [
+    "Streaming low-latency audio between Twilio Media Streams and the OpenAI Realtime API over WebSockets",
+    "Keeping call transcripts synchronized with audio in real time",
+    "Designing prompt-driven scenarios that reliably cover scheduling, insurance, and edge-case conversations",
+  ],
+  solution:
+    "A real-time voice agent integrating Twilio Media Streams, the OpenAI Realtime API, and WebSockets to run low-latency conversational calls, paired with 10+ prompt-driven patient scenarios that capture end-to-end call flows for automated QA review.",
+  stack: ["Python", "FastAPI", "OpenAI Realtime API", "Twilio API", "WebSockets"],
+  architectureNote:
+    "A FastAPI service bridges Twilio Media Streams and the OpenAI Realtime API over WebSockets, handling bidirectional audio streaming and resolving transcript synchronization between the two. Prompt-driven scenario definitions drive simulated patient calls end-to-end, capturing full call flows for QA review.",
+  mermaid: `flowchart LR
+  A["Twilio Media Streams"] -->|"WebSockets"| B["FastAPI Bridge"]
+  B -->|"Realtime Audio"| C["OpenAI Realtime API"]
+  C --> B
+  B --> D["Transcript Sync"]
+  D --> E["Scenario-Driven Call Flows"]
+  E --> F["QA Review"]`,
+  highlights: [
+    "Real-time, low-latency conversational calls over Twilio + OpenAI Realtime API",
+    "10+ prompt-driven patient scenarios covering scheduling, insurance, and edge cases",
+    "~80% reduction in manual QA validation effort",
+    "Resolved transcript synchronization issues between audio and text streams",
+  ],
+  github: "https://github.com/Amirjon06",
+  liveDemo: null as string | null,
+};
+
+export const projects = [featuredProject, inProgressProject, stateRelayProject, patientVoiceBotProject];
 
 // Skills — all technologies grouped by category.
 export const skills = [
@@ -276,6 +350,22 @@ export const skills = [
       "Server-side scripting language used for dynamic web applications and backend development.",
     usedIn: ["Coursework", "Personal projects"],
   },
+  {
+    name: "Go",
+    category: "Languages",
+    level: "Proficient",
+    description:
+      "Used for building cross-platform background agents and CLIs for local system state capture.",
+    usedIn: ["StateRelay"],
+  },
+  {
+    name: "Dart",
+    category: "Languages",
+    level: "Working knowledge",
+    description:
+      "Flutter component development for cross-platform mobile UI.",
+    usedIn: ["Boardwalk Labs / OctoPilot AI"],
+  },
   // ── Frontend ───────────────────────────────────────────────────────────────
   {
     name: "React",
@@ -284,6 +374,14 @@ export const skills = [
     description:
       "Primary frontend framework for building component-based, interactive UIs.",
     usedIn: ["CipherForge", "GhostMirror (planned)", "This portfolio"],
+  },
+  {
+    name: "Flutter",
+    category: "Frontend",
+    level: "Proficient",
+    description:
+      "Reusable UI component engine and persistent theming across a production AI app.",
+    usedIn: ["Boardwalk Labs / OctoPilot AI"],
   },
   {
     name: "Tailwind CSS",
@@ -343,6 +441,14 @@ export const skills = [
     usedIn: ["CipherForge", "Sound of Earth"],
   },
   {
+    name: "WebSockets",
+    category: "Backend",
+    level: "Working knowledge",
+    description:
+      "Real-time bidirectional audio and data streaming.",
+    usedIn: ["Patient Voice Bot"],
+  },
+  {
     name: "Backend Architecture",
     category: "Backend",
     level: "Working knowledge",
@@ -358,6 +464,14 @@ export const skills = [
     description:
       "Relational data modeling and querying — including SQLite for local-first storage.",
     usedIn: ["GhostMirror (planned)"],
+  },
+  {
+    name: "SQLite",
+    category: "Databases",
+    level: "Proficient",
+    description:
+      "Local-first persistence with full-text search for on-device applications.",
+    usedIn: ["StateRelay", "GhostMirror"],
   },
   {
     name: "PostgreSQL",
@@ -391,6 +505,14 @@ export const skills = [
     description:
       "Containerizing development and CI/CD environments for consistent, reproducible builds.",
     usedIn: ["Sound of Earth CI/CD pipeline"],
+  },
+  {
+    name: "GitHub Actions",
+    category: "Cloud & DevOps",
+    level: "Proficient",
+    description:
+      "Automated multi-environment deployment pipelines.",
+    usedIn: ["Sound of Earth"],
   },
   {
     name: "Linux",
@@ -432,6 +554,14 @@ export const skills = [
     description:
       "API testing, documentation, and debugging for REST endpoints during development.",
     usedIn: ["CipherForge", "Personal projects"],
+  },
+  {
+    name: "Tauri",
+    category: "Tools",
+    level: "Working knowledge",
+    description:
+      "Packaging web apps as native desktop applications.",
+    usedIn: ["GhostMirror"],
   },
 ];
 

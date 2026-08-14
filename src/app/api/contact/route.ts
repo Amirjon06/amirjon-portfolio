@@ -5,8 +5,6 @@ import { Resend } from "resend";
  * CONTACT FORM HANDLER — sends each submission to your inbox via Resend.
  * Requires RESEND_API_KEY in .env.local (restart dev server after adding it).
  */
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TO_EMAIL = "amirjonabd5@gmail.com";
 // Free shared sender that works without owning a domain.
 // If you later verify a domain in Resend, change this to e.g. "contact@yourdomain.com".
@@ -24,6 +22,11 @@ export async function POST(req: NextRequest) {
       console.error("RESEND_API_KEY is not set");
       return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
     }
+
+    // Lazily constructed so builds/dev runs without RESEND_API_KEY set
+    // don't throw at module load — the check above already handles that
+    // case gracefully for the actual request.
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,
