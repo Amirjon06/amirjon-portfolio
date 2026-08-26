@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowLeft, Github, ArrowUpRight, ExternalLink } from "lucide-react";
-import { ghostMirrorProject as p } from "@/data/content";
+import { sev0Project as p } from "@/data/content";
 import { trackEvent } from "@/lib/analytics";
 import Reveal from "@/components/Reveal";
 import SectionTheme from "@/components/SectionTheme";
@@ -13,7 +13,7 @@ const Mermaid = dynamic(() => import("@/components/Mermaid"), {
   loading: () => <div className="h-32 rounded-lg border border-white/5 bg-surface/40" />,
 });
 
-export default function GhostMirrorPage() {
+export default function Sev0Page() {
   return (
     <SectionTheme theme="architecture" className="min-h-screen">
     <main className="mx-auto max-w-3xl px-6 pb-32 pt-36 md:px-10 md:pt-48">
@@ -50,7 +50,7 @@ export default function GhostMirrorPage() {
             href={p.github}
             target="_blank"
             rel="noreferrer"
-            onClick={() => trackEvent("github_click", { source: "project_ghostmirror" })}
+            onClick={() => trackEvent("github_click", { source: "project_sev0" })}
             className="flex items-center gap-2 text-sm text-ink transition-colors hover:text-signal"
           >
             <Github size={15} /> Source code <ArrowUpRight size={12} />

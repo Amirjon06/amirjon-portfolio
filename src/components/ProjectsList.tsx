@@ -11,7 +11,7 @@ export default function ProjectsList() {
       </Reveal>
       <Reveal delay={0.05}>
         <p className="mt-5 max-w-xl text-xl text-muted md:text-2xl">
-          A completed case study and a project currently in active development.
+          Systems-oriented work, from a shipped MVP to completed case studies.
         </p>
       </Reveal>
 

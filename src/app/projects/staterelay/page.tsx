@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { ArrowLeft, Github, ArrowUpRight, ExternalLink } from "lucide-react";
-import { stateRelayProject as p } from "@/data/content";
+import { ArrowLeft, Github, ArrowUpRight, CheckCircle2, Circle } from "lucide-react";
+import { inProgressProject as g } from "@/data/content";
 import { trackEvent } from "@/lib/analytics";
 import Reveal from "@/components/Reveal";
 import SectionTheme from "@/components/SectionTheme";
@@ -25,52 +25,48 @@ export default function StateRelayPage() {
 
       <Reveal delay={0.05}>
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <h1 className="font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">{p.name}</h1>
-          <span className="rounded-full border border-signal/30 px-3 py-1 font-mono text-xs uppercase tracking-wider text-signal">
-            {p.status}
+          <h1 className="font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">{g.name}</h1>
+          <span className="rounded-full border border-accent/30 px-3 py-1 font-mono text-xs uppercase tracking-wider text-accent">
+            {g.statusBadge}
           </span>
         </div>
-        <p className="mt-3 text-lg text-muted">{p.tagline}</p>
+        <p className="mt-3 text-lg text-muted">{g.tagline}</p>
       </Reveal>
 
-      <Reveal delay={0.1}>
-        <div className="mt-6 flex gap-4">
-          {p.liveDemo && (
-            <a
-              href={p.liveDemo}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => trackEvent("project_view", { project: p.slug, type: "live_demo" })}
-              className="flex items-center gap-2 text-sm text-ink transition-colors hover:text-signal"
-            >
-              <ExternalLink size={15} /> Live demo
-            </a>
-          )}
+      {g.github && (
+        <Reveal delay={0.1}>
           <a
-            href={p.github}
+            href={g.github}
             target="_blank"
             rel="noreferrer"
             onClick={() => trackEvent("github_click", { source: "project_staterelay" })}
-            className="flex items-center gap-2 text-sm text-ink transition-colors hover:text-signal"
+            className="mt-6 inline-flex items-center gap-2 text-sm text-ink transition-colors hover:text-signal"
           >
-            <Github size={15} /> Source code <ArrowUpRight size={12} />
+            <Github size={15} /> Repository <ArrowUpRight size={12} />
           </a>
-        </div>
-      </Reveal>
+        </Reveal>
+      )}
 
       <div className="mt-16 space-y-14">
         <Reveal>
           <section>
             <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Problem</h2>
-            <p className="mt-3 text-lg leading-relaxed text-muted">{p.problem}</p>
+            <p className="mt-3 text-lg leading-relaxed text-muted">{g.problem}</p>
           </section>
         </Reveal>
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Challenges</h2>
+            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Overview</h2>
+            <p className="mt-3 text-lg leading-relaxed text-muted">{g.vision}</p>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section>
+            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Engineering Challenges</h2>
             <ul className="mt-3 space-y-2">
-              {p.challenges.map((c, idx) => (
+              {g.challenges.map((c, idx) => (
                 <li key={idx} className="flex gap-3 text-base leading-relaxed text-muted">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-signal" />
                   <span>{c}</span>
@@ -82,26 +78,9 @@ export default function StateRelayPage() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Solution</h2>
-            <p className="mt-3 text-lg leading-relaxed text-muted">{p.solution}</p>
-          </section>
-        </Reveal>
-
-        <Reveal>
-          <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Architecture</h2>
-            <p className="mt-3 text-base leading-relaxed text-muted">{p.architectureNote}</p>
-            <div className="mt-4">
-              <Mermaid chart={p.mermaid} id={`mermaid-${p.slug}`} />
-            </div>
-          </section>
-        </Reveal>
-
-        <Reveal>
-          <section>
             <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Stack</h2>
             <div className="mt-3 flex flex-wrap gap-2">
-              {p.stack.map((s) => (
+              {g.plannedStack.map((s) => (
                 <span key={s} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
                   {s}
                 </span>
@@ -112,15 +91,37 @@ export default function StateRelayPage() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Highlights</h2>
-            <ul className="mt-3 space-y-2">
-              {p.highlights.map((h, idx) => (
-                <li key={idx} className="flex gap-3 text-base leading-relaxed text-muted">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                  <span>{h}</span>
+            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Implementation Status</h2>
+            <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {g.roadmap.map((r) => (
+                <li
+                  key={r.item}
+                  className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
+                    r.done ? "border-signal/25 text-ink" : "border-white/10 text-muted"
+                  }`}
+                >
+                  {r.done ? <CheckCircle2 size={14} className="shrink-0 text-signal" /> : <Circle size={14} className="shrink-0 text-muted" />}
+                  {r.item}
                 </li>
               ))}
             </ul>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section>
+            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Architecture</h2>
+            <div className="mt-4 space-y-8">
+              {g.diagrams.map((d) => (
+                <div key={d.title}>
+                  <p className="font-display text-base font-semibold text-ink">{d.title}</p>
+                  <p className="mt-1 text-sm text-muted">{d.description}</p>
+                  <div className="mt-3">
+                    <Mermaid chart={d.mermaid} id={`mermaid-staterelay-${d.title.toLowerCase().replace(/\s+/g, "-")}`} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </section>
         </Reveal>
       </div>

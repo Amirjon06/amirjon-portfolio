@@ -18,39 +18,35 @@ export const heroIdentity = {
 };
 
 export const heroLines = [
-  "Building intelligent tools, scalable web systems, and reliable developer experiences.",
+  "Backend systems, AI/agentic tooling, and infrastructure that holds up under real conditions.",
 ];
 
 // Cycling phrases for hero typing animation — loops forever.
 export const heroCyclePhrases = [
-  "Hello, World.",
-  "I'm Amirjon Abdunayimov",
+  "Hello World.",
+  "I'm Amirjon Abdunayimov.",
   "Software Engineer.",
-  "Full-Stack Developer.",
-  "Building AI-Powered Applications.",
-  "Creating Scalable Web Systems.",
-  "Cloud & DevOps Enthusiast.",
-  "Open Source Learner.",
+  "Backend · AI Systems · Infrastructure.",
 ];
 
 export const about = {
   paragraphs: [
-    "I build software across full-stack applications, cloud infrastructure, and AI-powered tools — with a focus on reliable systems, clean interfaces, and production-ready workflows.",
-    "Currently interning at Sound of Earth in DevOps & Cloud Infrastructure and contributing to Doc Oct at Boardwalk Labs, an AI-powered writing platform. I’m also an incoming CS/Math student at NYU Tandon and a CS/Math tutor at Kingsborough, supporting 50+ students.",
-    "I founded the AI, Coding, and Systems Club, serve as a Student Government Senator, and work as a Student Ambassador, combining technical execution with leadership, mentorship, and campus impact.",
+    "I’m a Computer Science student at NYU Tandon and a software engineer with experience across backend development, AI systems, cloud infrastructure, and developer tooling. I’m especially interested in systems where reliability, correctness, observability, and real-world behavior matter.",
+    "Currently a Software Engineering Intern at Boardwalk Labs, building LLM pipelines and document-ingestion infrastructure for OctoPilot AI. Previously a DevOps & Cloud Infrastructure Intern at Sound of Earth.",
+    "I founded the AI, Coding, and Systems Club, combining hands-on engineering work with mentorship and technical community-building.",
   ],
   education: [
     {
       school: "New York University — Tandon School of Engineering",
       degree: "B.S. in Computer Science (Minor in Mathematics)",
-      meta: "Incoming Transfer Student · Expected May 2028",
+      meta: "Expected Graduation: May 2028",
       honors: [],
-      courses: [],
+      courses: ["Linear Algebra", "Discrete Mathematics", "Python Programming", "Calculus II", "Arabic I", "Data Structures & Algorithms — Placement Pending"],
     },
     {
       school: "Kingsborough Community College",
       degree: "Associate Degree in Computer Science",
-      meta: "09/2024 – 07/2026",
+      meta: "September 2024 – 2026",
       honors: ["Dean's List", "Honors Program", "Phi Theta Kappa", "JKC Scholarship Semifinalist"],
       courses: [],
     },
@@ -66,7 +62,7 @@ export const about = {
     { value: "100+", label: "Tutoring sessions delivered" },
     { value: "50+", label: "Students Mentored" },
     { value: "15+", label: "AI Features" },
-    { value: "3", label: "Active roles" },
+    { value: "31", label: "Technologies" },
   ],
 };
 
@@ -75,15 +71,15 @@ export const experience = [
     company: "Sound of Earth",
     role: "DevOps & Cloud Infrastructure Intern",
     location: "Remote",
-    dates: "May 2026 – Present",
+    dates: "May 2026 – Aug 2026",
     summary:
-      "Working on the infrastructure side of a climate-data platform — containerized environments, CI/CD pipelines, and monitoring for data pipeline services.",
+      "Worked on the infrastructure side of a climate-data platform — CI/CD pipelines, a database migration, and a production security audit.",
     bullets: [
-      "Set up a containerized development and CI/CD workflow using Docker, GitHub Actions, and Linux to standardize how services are built, tested, and deployed.",
-      "Built real-time monitoring dashboards for climate data pipelines using JavaScript and Python, giving the team visibility into pipeline health across services.",
-      "Added automated testing and Git-based release pipelines to the deployment workflow to make releases more repeatable and easier to review.",
+      "Architected containerized CI/CD pipelines using Docker, GitHub Actions, and Linux, automating multi-environment deployments, reducing production release regressions by 40%, and saving $3.2K/year in staging overhead.",
+      "Engineered a Supabase/PostgreSQL migration for 138+ records, restructuring Airtable data across 8 normalized tables/views and building a PostgREST-backed migration pipeline for web and mobile clients.",
+      "Audited production API and infrastructure security, identifying 29 actionable issues across JWT, CORS, secrets management, Docker networking, CI/CD, backups, and monitoring.",
     ],
-    tags: ["Docker", "GitHub Actions", "Linux", "Python", "JavaScript", "CI/CD"],
+    tags: ["Docker", "GitHub Actions", "Linux", "PostgreSQL", "Supabase", "CI/CD"],
     logo: "/images/logos/sound-of-earth.png",
   },
   {
@@ -92,27 +88,26 @@ export const experience = [
     location: "Remote",
     dates: "June 2026 – Present",
     summary:
-      "Leading frontend architecture for OctoPilot AI and building the LLM pipelines behind its AI learning modules.",
+      "Building LLM pipelines and document-ingestion infrastructure for OctoPilot AI, and leading its Flutter frontend.",
     bullets: [
-      "Led the frontend architecture for OctoPilot AI, building a reusable UI engine across 20+ core Flutter components to eliminate 15+ cross-component regressions.",
-      "Designed and deployed LLM pipelines and automated text-extraction modules in Python, establishing semantic knowledge graphs that cut manual processing times by 40%.",
-      "Spearheaded Git-based integration standards across a 5-engineer team, streamlining production-ready releases across 10+ AI learning modules.",
-      "Optimized cross-platform application state by implementing a persistent theme engine, driving visual and interface consistency across the entire user environment.",
+      "Designed and deployed Python-based LLM pipelines and semantic knowledge graphs, automating AI content-processing workflows and reducing manual processing time by 40%.",
+      "Built a Python/FastAPI document-ingestion API for downstream LLM/RAG workflows, supporting 3 file formats (PDF, DOCX, PPTX) with text normalization, encrypted/corrupt-file handling, automated tests, and chunking-ready output.",
+      "Led Flutter/Dart development across 20+ reusable components and AI learning workflows, eliminating 15+ cross-component regressions while standardizing cross-platform UI state and theming across desktop and mobile surfaces.",
     ],
-    tags: ["Flutter", "Python", "LLM Pipelines", "Git", "UI Architecture"],
+    tags: ["Python", "FastAPI", "LLM Pipelines", "Flutter", "Dart"],
     logo: "/images/logos/boardwalk-labs.png",
   },
   {
     company: "Kingsborough Community College Learning Center",
     role: "Computer Science & Mathematics Tutor",
     location: "Brooklyn, NY",
-    dates: "May 2026 – Present",
+    dates: "March 2026 – June 2026",
     summary:
       "One-on-one and small-group tutoring across core CS and math courses, focused on building durable problem-solving skills rather than just answers.",
     bullets: [
-      "Tutor students in Calculus I & II, Data Structures & Algorithms, Intro to Computer Science, Algebra, and Pre-Calculus.",
-      "Walk students through debugging, algorithmic thinking, and programming fundamentals at their own pace.",
-      "Break down complex technical and mathematical concepts into explanations suited to each student's learning style.",
+      "Mentored 50+ students across 100+ tutoring sessions in programming, algorithms, recursion, debugging, mathematics, and structured problem solving.",
+      "Helped students trace code, identify logical errors, and develop solutions independently.",
+      "Explained technical and mathematical concepts from first principles and adapted explanations to different experience levels.",
     ],
     tags: ["Teaching", "DSA", "Algorithms", "Mentorship"],
     logo: "/images/logos/kingsborough.png",
@@ -156,116 +151,96 @@ export const featuredProject = {
 };
 
 export const inProgressProject = {
-  slug: "ghostmirror",
-  name: "GhostMirror",
-  tagline: "Local-First AI Memory Engine",
-  status: "In Active Development",
-  statusBadge: "In Active Development",
+  slug: "staterelay",
+  name: "StateRelay",
+  tagline: "Cross-Platform Workspace Handoff Tool",
+  status: "MVP · v0.1.0",
+  statusBadge: "MVP · v0.1.0",
   oneLiner:
-    "A local-first memory engine for developers — concept, architecture, and roadmap, currently being built.",
+    "A cross-platform Go/TypeScript workspace handoff system that securely captures, transfers, and restores Git, editor, terminal, and browser context between machines.",
   problem:
-    "Developers lose context constantly — across terminals, notes, browser tabs, files, and coding sessions — making it hard to recall what was done, why, or where things were left off.",
+    "Developers constantly switch machines — desk, laptop, home — and lose context every time: which branch was active, what was uncommitted, which files and tabs were open, where the terminal was, what was in the browser.",
   vision:
-    "Build a local-first AI memory engine that automatically captures and organizes developer activity, enabling natural-language recall of previous work — entirely on-device, with no data leaving the user's machine.",
-  plannedStack: ["React", "TypeScript", "Tailwind CSS", "FastAPI", "Python", "SQLite", "Tauri", "Embeddings", "Semantic Search"],
+    "StateRelay is a cross-platform workspace handoff tool for developers. It captures the working state around a Git repository — branch, commit, uncommitted file snapshots, editor context, terminal directories, and browser URLs — and moves it to another machine, so switching computers doesn't mean rebuilding your whole development context by hand.",
+  plannedStack: ["Go", "TypeScript", "Git", "SQLite", "mDNS", "TLS / mutual TLS", "Ed25519", "GitHub Actions"],
   challenges: [
-    "Designing a local-first architecture that works fully offline",
-    "Privacy-preserving storage of clipboard and filesystem activity",
-    "Building reliable, low-overhead event collection pipelines",
-    "Semantic retrieval and memory organization over unstructured activity logs",
-    "Performance optimization for continuous background indexing",
+    "Capturing a coherent snapshot of workspace state across Git, editor, terminal, and browser without a running background service",
+    "Verifying session integrity end-to-end — SHA-256 content checks plus Ed25519-signed sessions from trusted device identities",
+    "Local network transfer and zero-configuration device discovery via mDNS, with optional mutual TLS for trusted devices",
+    "Restoring safely: dry-run previews and conflict protection so a restore never silently overwrites local changes",
   ],
   diagrams: [
     {
-      title: "System Overview",
-      description: "How the desktop shell, backend service, and storage layer are planned to fit together.",
+      title: "Capture & Transfer",
+      description: "How a workspace session is captured, signed, and sent to a paired device.",
       mermaid: `flowchart LR
-  A["Tauri Desktop Shell"] --> B["React + TypeScript UI"]
-  B --> C["FastAPI Local Service"]
-  C --> D["SQLite Storage"]
-  C --> E["Background Watchers"]`,
+  A["Go CLI: capture"] --> B["JSON Session File"]
+  B --> C["SHA-256 Content Check"]
+  C --> D["Ed25519 Signing"]
+  D --> E["mDNS Discovery"]
+  E --> F["HTTP/HTTPS + optional mTLS"]
+  F --> G["Receiver: listen"]`,
     },
     {
-      title: "Data Flow",
-      description: "Planned flow from raw activity capture to searchable memory.",
+      title: "Restore",
+      description: "How a received session is validated and applied on the target machine.",
       mermaid: `flowchart LR
-  A["Clipboard / Filesystem Events"] --> B["Event Collection Pipeline"]
-  B --> C["SQLite Persistence"]
-  C --> D["Embedding Pipeline (Planned)"]
-  D --> E["Semantic Search Index (Planned)"]
-  E --> F["Natural-Language Recall UI"]`,
-    },
-    {
-      title: "Component Architecture",
-      description: "Major components and their planned responsibilities.",
-      mermaid: `flowchart TB
-  subgraph Desktop App
-    UI["Dashboard UI (React)"]
-    Search["Search and Recall View"]
-  end
-  subgraph Local Backend
-    API["FastAPI Service"]
-    Watchers["Background Watchers"]
-    DB["SQLite"]
-    Embed["Embedding Service (Planned)"]
-  end
-  UI --> API
-  Search --> API
-  API --> Watchers
-  API --> DB
-  API --> Embed
-  Embed --> DB`,
+  A["SQLite Handoff History"] --> B["Go CLI: restore"]
+  B --> C["Dry-Run Preview"]
+  C --> D["Conflict Check"]
+  D --> E["Apply to Workspace"]
+  F["VS Code Extension"] --> E`,
     },
   ],
   roadmap: [
-    { item: "Project concept", done: true },
-    { item: "Repository created", done: true },
-    { item: "Architecture planning", done: true },
-    { item: "Event collection engine", done: false },
-    { item: "SQLite persistence layer", done: false },
-    { item: "Dashboard interface", done: false },
-    { item: "Search engine", done: false },
-    { item: "Embedding pipeline", done: false },
-    { item: "Semantic retrieval", done: false },
-    { item: "Public release", done: false },
+    { item: "Go CLI: capture / restore / send / listen / device trust", done: true },
+    { item: "JSON session files with SHA-256 integrity checks", done: true },
+    { item: "Ed25519-signed sessions from trusted device identities", done: true },
+    { item: "mDNS device discovery + optional mutual TLS", done: true },
+    { item: "SQLite handoff history, dry-run restore, conflict protection", done: true },
+    { item: "VS Code extension for editor state capture/restore", done: true },
+    { item: "Background service", done: false },
+    { item: "Desktop UI", done: false },
+    { item: "Deeper editor/browser integrations", done: false },
   ],
-  github: "https://github.com/Amirjon06",
+  github: "https://github.com/Amirjon06/handoff-dev",
 };
 
-export const stateRelayProject = {
-  slug: "staterelay",
-  name: "StateRelay",
-  tagline: "Cross-Platform Distributed Workspace State Synchronization",
+export const ghostMirrorProject = {
+  slug: "ghostmirror",
+  name: "GhostMirror",
+  tagline: "Local-First Developer Activity Dashboard",
   status: "Completed",
   oneLiner:
-    "A background agent and CLI that captures your Git and editor state and securely syncs it across your machines.",
+    "A local-first developer memory engine combining FastAPI, SQLite FTS5, and local semantic embeddings to capture and search developer activity.",
   problem:
-    "Developers constantly switch machines — desk, laptop, home — and lose context every time: which branch was active, what was uncommitted, which files and tabs were open.",
+    "Developers lose context constantly — across terminals, notes, browser tabs, files, and coding sessions — making it hard to recall what was done, why, or where things were left off, without sending activity data to the cloud.",
   challenges: [
-    "Capturing accurate Git repository state — active branches and uncommitted diffs — into a portable session schema",
-    "Zero-configuration device discovery on local networks using mDNS",
-    "Securing device-to-device transfer with mutual TLS instead of relying on a cloud relay",
-    "Restoring editor state (tabs, layouts, cursor positions) via VS Code and Browser APIs across macOS, Linux, and Windows",
+    "Indexing developer events with both keyword (FTS5) and local semantic search, entirely on-device",
+    "Getting natural-language retrieval fast without relying on an external model provider",
+    "Building a local-first architecture — FastAPI + SQLite — that works fully offline with no data leaving the machine",
+    "Packaging the same codebase as both a browser dashboard and a Tauri desktop app",
   ],
   solution:
-    "A cross-platform Go background agent and CLI that captures local Git repository state, active branches, and uncommitted file diffs into portable JSON session schemas, then transfers them directly between paired devices over a local network using mDNS discovery and mutual TLS — with zero configuration and no cloud dependency.",
-  stack: ["Go", "TypeScript", "SQLite", "mDNS", "mTLS", "Git"],
+    "A local-first memory engine: a FastAPI backend persists structured events (clipboard and filesystem snapshots) to SQLite via SQLAlchemy, indexes them with SQLite FTS5 for keyword search, and layers a local deterministic embedding pipeline on top for semantic search — all exposed through a React + TypeScript dashboard, and packaged as a native macOS app via Tauri.",
+  stack: ["React", "TypeScript", "FastAPI", "Python", "SQLite", "Tauri", "SQLAlchemy", "SQLite FTS5"],
   architectureNote:
-    "A Go background agent and CLI capture Git repository state into portable JSON session schemas. mDNS handles zero-configuration device discovery on the local network, and mutual TLS secures the direct device-to-device transfer. TypeScript extensions using the VS Code and Browser APIs extract and restore active editor layouts, cursor positions, and tabs across macOS, Linux, and Windows.",
+    "The React/TypeScript dashboard (Vite, Tailwind, Zustand, TanStack Query) talks to a FastAPI service over REST. SQLAlchemy persists events to SQLite, which is also indexed with FTS5 for keyword search; a local embedding pipeline stored alongside it powers semantic search without calling out to an external model provider. Clipboard and filesystem watchers feed events in continuously, and the same web build ships as a Tauri desktop app.",
   mermaid: `flowchart LR
-  A["Go Background Agent"] --> B["CLI"]
-  A --> C["Git State Capture"]
-  C --> D["Portable JSON Session Schema"]
-  D --> E["mDNS Discovery"]
-  E --> F["mTLS Transfer Layer"]
-  F --> G["Paired Device Agent"]`,
+  A["Clipboard / Filesystem Watchers"] --> B["FastAPI Service"]
+  B --> C["SQLAlchemy + SQLite"]
+  C --> D["SQLite FTS5 Keyword Index"]
+  C --> E["Local Embedding Pipeline"]
+  D --> F["React + TypeScript Dashboard"]
+  E --> F
+  F --> G["Tauri Desktop App"]`,
   highlights: [
-    "Cross-platform Go background agent and CLI for Git repository state capture",
-    "Zero-configuration device pairing via mDNS discovery and mutual TLS",
-    "TypeScript VS Code and Browser extensions for editor state restoration",
-    "Complete state restoration across Linux, macOS, and Windows",
+    "Local-first — no data leaves the device, no external model provider",
+    "Keyword search (SQLite FTS5) plus local semantic search over stored events",
+    "Ships as both a browser dashboard and a packaged Tauri desktop app for macOS",
+    "Backed by pytest, Vitest, and Playwright test suites with CI via GitHub Actions",
   ],
-  github: "https://github.com/Amirjon06",
+  github: "https://github.com/Amirjon06/GhostMirror",
   liveDemo: null as string | null,
 };
 
@@ -305,7 +280,43 @@ export const patientVoiceBotProject = {
   liveDemo: null as string | null,
 };
 
-export const projects = [featuredProject, inProgressProject, stateRelayProject, patientVoiceBotProject];
+export const sev0Project = {
+  slug: "sev0",
+  name: "sev0",
+  tagline: "Autonomous AI Incident Investigation & Repair System",
+  status: "Alpha",
+  oneLiner:
+    "An autonomous AI incident investigation and repair system that coordinates 16 diagnostic tools across observability, Git, and runtime state to identify root causes and safely verify fixes.",
+  problem:
+    "Diagnosing a production incident means reading metrics, logs, and git history to find a root cause, then verifying a fix actually works before anyone trusts it — a slow, manual process even for an experienced on-call engineer.",
+  challenges: [
+    "Orchestrating 16 diagnostic tools across Prometheus, Loki, Git, and Docker to trace a failure to its root-cause service, file, symbol, and introducing commit",
+    "Reproducing a failure before trusting a patch that claims to fix it, rather than accepting green tests as sufficient",
+    "Building a 4-service incident lab with 23 fault scenarios — including adversarial and silent failures — to actually evaluate root-cause accuracy",
+    "Enforcing sandbox isolation, patch size limits, and protected paths in code rather than in the prompt",
+  ],
+  solution:
+    "An autonomous AI software engineer that reads metrics and logs to find what broke and when, reads git history around that moment, forms and tests hypotheses by executing code inside an isolated Docker sandbox, and only proposes a patch after reproducing the failure it claims to fix. A verified fix opens as a draft pull request — never merged automatically.",
+  stack: ["Python", "Anthropic API", "FastAPI", "PostgreSQL", "Docker", "Prometheus", "Loki"],
+  architectureNote:
+    "A hand-rolled tool-calling loop against the Anthropic Messages API drives 16 tools across four stages: collect (Prometheus/Loki metrics and logs), retrieve (git history and symbol-level code reading), experiment (hypotheses tested by execution in a networkless Docker sandbox), and repair (patch applied to a throwaway copy, verified against the real test suite, opened as a draft PR only if the failure reproduced and the fix held). Incident Lab — a real 4-service storefront with 23 fault scenarios — provides ground truth the agent can't read, used to benchmark diagnostic accuracy across ablations.",
+  mermaid: `flowchart LR
+  A["Prometheus + Loki"] --> B["Collect: Onset Detection"]
+  B --> C["Retrieve: Git History + Symbols"]
+  C --> D["Experiment: Sandboxed Hypothesis Testing"]
+  D --> E["Repair: Patch + Verify"]
+  E --> F["Draft Pull Request"]`,
+  highlights: [
+    "16 diagnostic tools across observability, git history, code retrieval, execution, and reasoning",
+    "4-service Incident Lab with 23 fault scenarios, including adversarial and silent-failure cases",
+    "Reproduces failures before trusting a patch, and reports regressions separately from fixes",
+    "Sandboxed execution, patch size limits, and protected paths enforced in code — draft PRs only, nothing merges automatically",
+  ],
+  github: "https://github.com/Amirjon06/sev0",
+  liveDemo: null as string | null,
+};
+
+export const projects = [sev0Project, inProgressProject, ghostMirrorProject, featuredProject, patientVoiceBotProject];
 
 // Skills — all technologies grouped by category.
 export const skills = [
@@ -323,39 +334,31 @@ export const skills = [
     category: "Languages",
     level: "Proficient",
     description:
-      "Default language for frontend and tooling work — type-safe components, APIs, and shared data models.",
-    usedIn: ["CipherForge", "GhostMirror (planned)", "This portfolio"],
+      "Frontend applications, developer tooling, state management, and typed application interfaces.",
+    usedIn: ["StateRelay", "CipherForge", "This portfolio"],
   },
   {
     name: "Python",
     category: "Languages",
     level: "Proficient",
     description:
-      "Used for backend services, automation scripts, and data-pipeline monitoring tools.",
-    usedIn: ["Sound of Earth dashboards", "CipherForge backend", "GhostMirror (planned)"],
+      "Backend services, automation, AI/LLM pipelines, observability tooling, and developer systems.",
+    usedIn: ["Boardwalk Labs", "sev0", "GhostMirror"],
   },
   {
     name: "C++",
     category: "Languages",
     level: "Familiar",
     description:
-      "Systems-level programming language studied through coursework; used for data structures and algorithms.",
+      "Programming, data structures, algorithms, and systems fundamentals through coursework and technical practice.",
     usedIn: ["Coursework"],
-  },
-  {
-    name: "PHP",
-    category: "Languages",
-    level: "Familiar",
-    description:
-      "Server-side scripting language used for dynamic web applications and backend development.",
-    usedIn: ["Coursework", "Personal projects"],
   },
   {
     name: "Go",
     category: "Languages",
     level: "Proficient",
     description:
-      "Used for building cross-platform background agents and CLIs for local system state capture.",
+      "Systems and networking work, including StateRelay's cross-platform capture/restore and secure peer-to-peer transfer.",
     usedIn: ["StateRelay"],
   },
   {
@@ -363,8 +366,16 @@ export const skills = [
     category: "Languages",
     level: "Working knowledge",
     description:
-      "Flutter component development for cross-platform mobile UI.",
+      "Flutter application development and reusable cross-platform UI components.",
     usedIn: ["Boardwalk Labs / OctoPilot AI"],
+  },
+  {
+    name: "SQL",
+    category: "Languages",
+    level: "Proficient",
+    description:
+      "Relational data modeling, queries, migrations, and application persistence with PostgreSQL and SQLite.",
+    usedIn: ["Sound of Earth", "GhostMirror"],
   },
   // ── Frontend ───────────────────────────────────────────────────────────────
   {
@@ -373,7 +384,7 @@ export const skills = [
     level: "Proficient",
     description:
       "Primary frontend framework for building component-based, interactive UIs.",
-    usedIn: ["CipherForge", "GhostMirror (planned)", "This portfolio"],
+    usedIn: ["CipherForge", "GhostMirror", "This portfolio"],
   },
   {
     name: "Flutter",
@@ -389,7 +400,7 @@ export const skills = [
     level: "Proficient",
     description:
       "Utility-first styling for building consistent, responsive interfaces quickly.",
-    usedIn: ["CipherForge", "GhostMirror (planned)", "This portfolio"],
+    usedIn: ["CipherForge", "GhostMirror", "This portfolio"],
   },
   {
     name: "Responsive UI Design",
@@ -405,32 +416,16 @@ export const skills = [
     category: "Backend",
     level: "Working knowledge",
     description:
-      "JavaScript runtime for server-side logic, build scripts, and Express-based services.",
-    usedIn: ["Coursework", "Personal projects"],
-  },
-  {
-    name: "Express.js",
-    category: "Backend",
-    level: "Working knowledge",
-    description:
-      "Minimal Node.js web framework for building REST APIs and middleware pipelines.",
+      "JavaScript runtime for server-side logic and build tooling.",
     usedIn: ["Coursework", "Personal projects"],
   },
   {
     name: "FastAPI",
     category: "Backend",
-    level: "Working knowledge",
+    level: "Proficient",
     description:
-      "Python framework for building typed, high-performance REST APIs.",
-    usedIn: ["CipherForge backend", "GhostMirror (planned)"],
-  },
-  {
-    name: "Django",
-    category: "Backend",
-    level: "Working knowledge",
-    description:
-      "Python web framework for building secure, scalable full-stack applications.",
-    usedIn: ["Coursework", "Personal projects"],
+      "Typed, high-performance REST APIs and services — the backend framework behind sev0's target application, GhostMirror, and CipherForge.",
+    usedIn: ["sev0", "Boardwalk Labs", "GhostMirror", "CipherForge"],
   },
   {
     name: "RESTful API Development",
@@ -458,14 +453,6 @@ export const skills = [
   },
   // ── Databases ──────────────────────────────────────────────────────────────
   {
-    name: "SQL",
-    category: "Databases",
-    level: "Working knowledge",
-    description:
-      "Relational data modeling and querying — including SQLite for local-first storage.",
-    usedIn: ["GhostMirror (planned)"],
-  },
-  {
     name: "SQLite",
     category: "Databases",
     level: "Proficient",
@@ -476,26 +463,26 @@ export const skills = [
   {
     name: "PostgreSQL",
     category: "Databases",
-    level: "Working knowledge",
+    level: "Proficient",
     description:
-      "Open-source relational database used for production backend data persistence.",
-    usedIn: ["Coursework", "Personal projects"],
+      "Relational data persistence and migrations for production backend services.",
+    usedIn: ["Sound of Earth", "sev0"],
   },
   {
-    name: "MySQL",
+    name: "Supabase",
     category: "Databases",
     level: "Working knowledge",
     description:
-      "Relational database used in web application coursework and backend projects.",
-    usedIn: ["Coursework"],
+      "Managed Postgres and PostgREST-backed data migration and access for web/mobile clients.",
+    usedIn: ["Sound of Earth"],
   },
   {
-    name: "MongoDB",
+    name: "SQLAlchemy",
     category: "Databases",
-    level: "Familiar",
+    level: "Working knowledge",
     description:
-      "Document-oriented NoSQL database for flexible, schema-less data storage.",
-    usedIn: ["Coursework", "Personal projects"],
+      "Python ORM and migrations (with Alembic) for structured, persisted application data.",
+    usedIn: ["GhostMirror"],
   },
   // ── Cloud & DevOps ─────────────────────────────────────────────────────────
   {
@@ -525,10 +512,26 @@ export const skills = [
   {
     name: "CI/CD Pipelines",
     category: "Cloud & DevOps",
+    level: "Proficient",
+    description:
+      "Designing automated test and release pipelines using GitHub Actions to reduce production regressions.",
+    usedIn: ["Sound of Earth"],
+  },
+  {
+    name: "Prometheus",
+    category: "Cloud & DevOps",
     level: "Working knowledge",
     description:
-      "Designing automated test and release pipelines using GitHub Actions to reduce production bugs.",
-    usedIn: ["Sound of Earth"],
+      "Metrics collection and onset detection for observability-driven incident response.",
+    usedIn: ["sev0"],
+  },
+  {
+    name: "Loki",
+    category: "Cloud & DevOps",
+    level: "Working knowledge",
+    description:
+      "Log aggregation and querying alongside Prometheus for full observability coverage.",
+    usedIn: ["sev0"],
   },
   // ── Tools ──────────────────────────────────────────────────────────────────
   {
@@ -537,7 +540,7 @@ export const skills = [
     level: "Proficient",
     description:
       "Version control and Git-based release workflows for solo and team projects.",
-    usedIn: ["Sound of Earth", "CipherForge", "GhostMirror"],
+    usedIn: ["Sound of Earth", "CipherForge", "GhostMirror", "sev0"],
   },
   {
     name: "GitHub",
@@ -548,20 +551,28 @@ export const skills = [
     usedIn: ["Sound of Earth", "CipherForge", "GhostMirror"],
   },
   {
-    name: "Postman",
-    category: "Tools",
-    level: "Working knowledge",
-    description:
-      "API testing, documentation, and debugging for REST endpoints during development.",
-    usedIn: ["CipherForge", "Personal projects"],
-  },
-  {
     name: "Tauri",
     category: "Tools",
     level: "Working knowledge",
     description:
       "Packaging web apps as native desktop applications.",
     usedIn: ["GhostMirror"],
+  },
+  {
+    name: "mDNS",
+    category: "Tools",
+    level: "Working knowledge",
+    description:
+      "Zero-configuration local network device discovery for peer-to-peer transfer.",
+    usedIn: ["StateRelay"],
+  },
+  {
+    name: "TLS / mTLS",
+    category: "Tools",
+    level: "Working knowledge",
+    description:
+      "Transport security and mutual authentication for trusted device-to-device transfer.",
+    usedIn: ["StateRelay"],
   },
 ];
 

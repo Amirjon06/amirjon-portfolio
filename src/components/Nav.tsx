@@ -87,11 +87,8 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-        scrolled
-          ? "border-b border-white/5 bg-[rgba(10,14,23,0.82)] backdrop-blur-xl shadow-[0_2px_24px_rgba(0,0,0,0.4)]"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 z-50 w-full border-b border-white/10 bg-[rgba(8,11,18,0.92)] backdrop-blur-xl transition-shadow duration-300"
+      style={scrolled ? { boxShadow: "0 2px 24px rgba(0,0,0,0.4)" } : undefined}
     >
       {/* theme-driven hover/active colors (uses CSS vars, so it tracks the theme) */}
       <style>{`

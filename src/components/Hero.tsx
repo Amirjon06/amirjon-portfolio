@@ -1,187 +1,94 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ArrowDown, FileText, Github, Linkedin } from "lucide-react";
 import { profile } from "@/data/content";
 import { trackEvent } from "@/lib/analytics";
 import HeroModel from "@/components/HeroModel";
 
-type Seg = { text: string; color?: string };
 
-function Typed({
-  segments,
-  speed = 26,
-  startDelay = 0,
-  caret = false,
-  onDone,
-  className = "",
+function SequentialTyped({
+  lines,
+  typeSpeed = 65,
+  lineGapMs = 350,
 }: {
-  segments: Seg[];
-  speed?: number;
-  startDelay?: number;
-  caret?: boolean;
-  onDone?: () => void;
-  className?: string;
+  lines: { text: string; className?: string }[];
+  typeSpeed?: number;
+  lineGapMs?: number;
 }) {
-  const full = segments.map((s) => s.text).join("");
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const [done, setDone] = useState(false);
+  const [lineIndex, setLineIndex] = useState(0);
+  const [text, setText] = useState("");
 
   useEffect(() => {
-    setCount(0);
-    setStarted(false);
-    setDone(false);
+    if (lineIndex >= lines.length) return;
+    const current = lines[lineIndex].text;
+    let timer: ReturnType<typeof setTimeout>;
 
-    let i = 0;
-    let interval: ReturnType<typeof setInterval> | undefined;
+    if (text.length < current.length) {
+      timer = setTimeout(() => setText(current.slice(0, text.length + 1)), typeSpeed);
+    } else {
+      timer = setTimeout(() => {
+        setLineIndex((i) => i + 1);
+        setText("");
+      }, lineGapMs);
+    }
 
-    const timeout = setTimeout(() => {
-      setStarted(true);
-      interval = setInterval(() => {
-        i += 1;
-        setCount(i);
-        if (i >= full.length) {
-          if (interval) clearInterval(interval);
-          setDone(true);
-          onDone && onDone();
-        }
-      }, speed);
-    }, startDelay);
+    return () => clearTimeout(timer);
+  }, [text, lineIndex, lines, typeSpeed, lineGapMs]);
 
-    return () => {
-      clearTimeout(timeout);
-      if (interval) clearInterval(interval);
-    };
-  }, [full, speed, startDelay]);
-
-  const nodes: ReactNode[] = [];
-  let remaining = count;
-  segments.forEach((seg, idx) => {
-    if (remaining <= 0) return;
-    const slice = seg.text.slice(0, remaining);
-    remaining -= seg.text.length;
-    nodes.push(
-      seg.color ? (
-        <span key={idx} style={{ color: seg.color }}>
-          {slice}
-        </span>
-      ) : (
-        <span key={idx}>{slice}</span>
-      )
-    );
-  });
-
-  const showCaret = caret && started && !done;
+  const caret = (
+    <span
+      aria-hidden
+      className="ml-0.5 inline-block h-[0.85em] w-0 border-r-2 align-[-0.1em]"
+      style={{ borderColor: "var(--hex-signal, #5EEAD4)", animation: "blink 1s step-end infinite" }}
+    />
+  );
 
   return (
-    <span className={className}>
-      {nodes}
-      {showCaret && (
-        <span
-          aria-hidden
-          className="ml-0.5 inline-block h-[0.85em] w-0 border-r-2 align-[-0.1em]"
-          style={{ borderColor: "var(--hex-signal, #5EEAD4)", animation: "blink 1s step-end infinite" }}
-        />
+    <div className="space-y-2">
+      {lines.slice(0, lineIndex).map((line, i) => (
+        <div key={i} className={line.className}>
+          {line.text}
+        </div>
+      ))}
+      {lineIndex < lines.length && (
+        <div className={lines[lineIndex].className}>
+          {text}
+          {caret}
+        </div>
       )}
-      {/* invisible full text reserves height + wrapping so nothing shifts */}
-      <span aria-hidden className="opacity-0">
-        {full.slice(count)}
-      </span>
-    </span>
+    </div>
   );
 }
 
 export default function Home() {
-  const [stage, setStage] = useState(0);
-
-  const SIG = "var(--hex-signal, #5EEAD4)";
-  const ACC = "var(--hex-accent, #F2B544)";
+  const heroLinesTyped = [
+    { text: "Hello World.", className: "font-display font-semibold leading-[1.3] tracking-tight text-white/90 text-xl sm:text-2xl lg:text-3xl" },
+    { text: "I'm Amirjon Abdunayimov.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
+    { text: "Software Engineer.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
+    {
+      text: "Building backend systems, AI tooling, and cloud infrastructure that hold up in production.",
+      className: "!mt-4 max-w-xl text-lg font-medium leading-snug text-white/80 sm:text-xl",
+    },
+  ];
 
   return (
-    <section className="relative flex min-h-[100svh] w-full items-center overflow-hidden bg-transparent">
+    <section className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-transparent">
       <div className="pointer-events-auto absolute inset-y-0 right-0 hidden w-[58%] lg:block xl:w-[60%]">
         <HeroModel className="h-full w-full" />
       </div>
 
-      <div className="pointer-events-none relative z-10 w-full px-6 md:px-12 lg:px-20">
-        <div className="pointer-events-auto max-w-xl lg:max-w-[40rem]">
-          {/* 1. Eyebrow */}
-          <p
-            className="mb-5 font-mono text-sm uppercase tracking-[0.3em] md:text-base"
-            style={{ color: SIG }}
-          >
-            <Typed
-              segments={[{ text: "Hello, World!" }]}
-              speed={36}
-              onDone={() => setStage((s) => Math.max(s, 1))}
-            />
-          </p>
+      <div className="pointer-events-none relative z-10 flex flex-1 items-start w-full px-6 pt-[26vh] md:px-12 md:pt-[24vh] lg:px-20">
+        <div className="pointer-events-auto max-w-2xl lg:max-w-[44rem]">
+          <SequentialTyped lines={heroLinesTyped} typeSpeed={65} lineGapMs={350} />
+        </div>
+      </div>
 
-          {/* 2. Name */}
-          <h1 className="font-display font-bold leading-[0.95] tracking-tight text-white text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
-            {stage >= 1 ? (
-              <Typed
-                segments={[{ text: "I\u2019m Amirjon Abdunayimov" }]}
-                speed={36}
-                caret
-                onDone={() => setStage((s) => Math.max(s, 2))}
-              />
-            ) : (
-              <span className="opacity-0">I&rsquo;m Amirjon Abdunayimov</span>
-            )}
-          </h1>
-
-          {/* 3. Subtitle (colored words type too) */}
-          <p className="mt-6 max-w-xl text-lg font-medium leading-snug text-white sm:text-xl lg:text-2xl">
-            {stage >= 2 ? (
-              <Typed
-                speed={24}
-                caret
-                onDone={() => setStage((s) => Math.max(s, 3))}
-                segments={[
-                  { text: "Software engineer building scalable " },
-                  { text: "full-stack applications", color: SIG },
-                  { text: ", " },
-                  { text: "AI-powered tools", color: ACC },
-                  { text: ", and " },
-                  { text: "cloud infrastructure", color: SIG },
-                  { text: "." },
-                ]}
-              />
-            ) : (
-              <span className="opacity-0">
-                Software engineer building scalable full-stack applications, AI-powered tools, and cloud infrastructure.
-              </span>
-            )}
-          </p>
-
-          {/* 4. Paragraph */}
-          <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/70 sm:text-base">
-            {stage >= 3 ? (
-              <Typed
-                speed={14}
-                caret
-                segments={[
-                  {
-                    text:
-                      "I design and build scalable applications, developer tools, and cloud-native systems with a focus on clean architecture, performance, and long-term maintainability.",
-                  },
-                ]}
-              />
-            ) : (
-              <span className="opacity-0">
-                I design and ship scalable applications, developer platforms, and
-                AI-powered tools that solve real problems. Clean architecture,
-                performance, and maintainability are at the core of everything I build.
-              </span>
-            )}
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <Link
-              href="#projects"
+      <div className="pointer-events-auto relative z-10 w-full px-6 pb-20 md:px-12 md:pb-24 lg:px-20">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <Link
+            href="#projects"
               className="group inline-flex items-center gap-2.5 rounded-2xl px-6 py-4 text-sm font-semibold text-white transition-transform duration-200 hover:scale-[1.03] sm:text-base"
               style={{
                 backgroundColor: "var(--hex-signal, #5EEAD4)",
@@ -221,7 +128,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </div>
 
       <div
         aria-hidden

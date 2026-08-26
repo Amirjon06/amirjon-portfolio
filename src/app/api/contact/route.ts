@@ -23,9 +23,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
     }
 
-    // Lazily constructed so builds/dev runs without RESEND_API_KEY set
-    // don't throw at module load — the check above already handles that
-    // case gracefully for the actual request.
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const { error } = await resend.emails.send({

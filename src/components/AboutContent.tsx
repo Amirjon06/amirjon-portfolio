@@ -9,6 +9,7 @@ import {
   Users,
   Mic,
   Cpu,
+  Sparkles,
   FlaskConical,
   Target,
 } from "lucide-react";
@@ -18,7 +19,7 @@ import Reveal from "./Reveal";
 const METRIC_ICONS = [
   <BookOpen key="0" size={18} />,
   <Users key="1" size={18} />,
-  <Bot key="2" size={18} />,
+  <Sparkles key="2" size={18} />,
   <Layers key="3" size={18} />,
 ];
 
@@ -84,7 +85,7 @@ export default function AboutContent() {
                 </h2>
                 <p className="mt-1 text-sm text-muted">
                   <span className="font-medium text-signal">Software Engineer</span>
-                  <span className="px-2 text-muted/40">·</span>
+                  <span className="mx-1.5 inline-block h-[3px] w-[3px] rounded-full bg-muted/60 align-middle" />
                   Brooklyn, NY
                 </p>
               </div>
@@ -132,6 +133,22 @@ export default function AboutContent() {
                               {h}
                             </span>
                           ))}
+                        </div>
+                      )}
+                      {ed.courses && ed.courses.length > 0 && (
+                        <div className="mt-3">
+                          <p className="mb-2 text-[10px] uppercase tracking-wider text-muted/50">Current Coursework</p>
+                          <div className="flex flex-wrap gap-2">
+                            {ed.courses.map((c) => (
+                              <span
+                                key={c}
+                                className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/[0.06] px-2.5 py-1 text-[11px] text-muted"
+                              >
+                                <span className="h-1 w-1 rounded-full bg-accent/70" />
+                                {c}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>
