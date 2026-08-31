@@ -25,7 +25,7 @@ export type ExperienceEntry = {
 export const EXPERIENCES: ExperienceEntry[] = [
   {
     id: "boardwalk-labs",
-    role: "Software Engineering Intern",
+    role: "Software Engineering Intern (Part-Time Contract)",
     company: "Boardwalk Labs",
     shortCompany: "Boardwalk Labs",
     location: "Remote",
@@ -37,20 +37,21 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Building LLM pipelines and document-ingestion infrastructure for OctoPilot AI, and leading its Flutter frontend.",
     bullets: [
       {
-        text: "Designed and deployed Python-based LLM pipelines and semantic knowledge graphs, automating AI content-processing workflows and reducing manual processing time by 40%.",
-        metric: "40% less manual processing",
+        text: "Building and shipping production learning workflows for OctoPilot AI in Flutter/Dart, spanning AI study plans, concept mapping, analytics, and responsive desktop/mobile experiences; helping reduce projected delivery from ~4 weeks to ~2 weeks (~50%).",
+        metric: "~50% faster delivery",
       },
       {
-        text: "Built a Python/FastAPI document-ingestion API for downstream LLM/RAG workflows, supporting 3 file formats (PDF, DOCX, PPTX) with text normalization, encrypted/corrupt-file handling, automated tests, and chunking-ready output.",
-        metric: "3 file formats",
+        text: "Engineering an end-to-end AI writing pipeline across Go, Python, and Flutter, integrating streamed LLM generation, multi-agent orchestration, persistence, credit accounting, and save/restore flows.",
+        metric: "Multi-agent orchestration",
       },
       {
-        text: "Led Flutter/Dart development across 20+ reusable components and AI learning workflows, eliminating 15+ cross-component regressions while standardizing cross-platform UI state and theming across desktop and mobile surfaces.",
-        metric: "20+ components",
+        text: "Developing a production Python/FastAPI document-ingestion service for downstream LLM/RAG pipelines, supporting 3 formats (PDF, DOCX, PPTX) with MIME/extension routing, normalization, encrypted/corrupt-file handling, and 8 automated tests.",
+        metric: "3 formats, 8 tests",
       },
   ],
     skills: [
       { name: "Python", level: 0.9, color: "#3776AB" },
+      { name: "Go", level: 0.85, color: "#00ADD8" },
       { name: "FastAPI", level: 0.85, color: "#009688" },
       { name: "Flutter", level: 0.85, color: "#54C5F8" },
       { name: "Dart", level: 0.8, color: "#0175C2" },
@@ -60,7 +61,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
   },
   {
     id: "sound-of-earth",
-    role: "DevOps & Cloud Infrastructure Intern",
+    role: "DevOps & Cloud Infrastructure Intern (Part-Time Contract)",
     company: "Sound of Earth",
     shortCompany: "Sound of Earth",
     location: "Remote",
@@ -72,16 +73,16 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Built cloud infrastructure and DevOps automation for a climate-data platform — CI/CD pipelines, a database migration, and a production security audit.",
     bullets: [
       {
-        text: "Architected containerized CI/CD pipelines using Docker, GitHub Actions, and Linux, automating multi-environment deployments, reducing production release regressions by 40%, and saving $3.2K/year in staging overhead.",
+        text: "Architected and owned containerized CI/CD infrastructure using Docker, GitHub Actions, and Linux, automating multi-environment deployments to reduce production regressions by 40% and slash $3.2K/year in staging overhead.",
         metric: "40% fewer regressions",
       },
       {
-        text: "Engineered a Supabase/PostgreSQL migration for 138+ records, restructuring Airtable data across 8 normalized tables/views and building a PostgREST-backed migration pipeline for web and mobile clients.",
-        metric: "138+ records migrated",
+        text: "Engineered a zero-downtime Supabase/PostgreSQL migration pipeline for 138,000+ records, restructuring legacy data across 8 normalized tables and building PostgREST-backed APIs for web and mobile synchronization.",
+        metric: "138K+ records migrated",
       },
       {
-        text: "Audited production API and infrastructure security, identifying 29 actionable issues across JWT, CORS, secrets management, Docker networking, CI/CD, backups, and monitoring.",
-        metric: "29 issues identified",
+        text: "Audited and hardened production infrastructure security across JWT authentication, CORS, secrets management, and isolated Docker networking, identifying and remediating 29 core exposure vectors.",
+        metric: "29 vectors remediated",
       },
     ],
     skills: [
@@ -108,16 +109,16 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Mentored computer science and mathematics students through structured technical instruction, helping them strengthen algorithmic thinking, debugging skills, and software engineering fundamentals.",
     bullets: [
       {
-        text: "Mentored 50+ students across 100+ tutoring sessions in programming, algorithms, recursion, debugging, mathematics, and structured problem solving.",
+        text: "Mentored 50+ students across 100+ sessions in introductory programming and mathematics, translating complex concepts into clear, structured problem-solving strategies.",
         metric: "100+ sessions",
       },
       {
-        text: "Helped students trace code, identify logical errors, and develop solutions independently.",
-        metric: "Debugging & tracing",
+        text: "Provided individualized tutoring in C++, pre-calculus, algebra, and statistics, adapting explanations and practice problems to students' skill levels and coursework.",
+        metric: "C++ & Math",
       },
       {
-        text: "Explained technical and mathematical concepts from first principles and adapted explanations to different experience levels.",
-        metric: "Python & C++",
+        text: "Guided students through programming fundamentals, debugging, and code tracing, helping them identify errors and develop more systematic approaches to solving problems.",
+        metric: "Debugging & tracing",
       },
     ],
     skills: [

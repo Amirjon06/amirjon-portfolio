@@ -69,32 +69,32 @@ export const about = {
 export const experience = [
   {
     company: "Sound of Earth",
-    role: "DevOps & Cloud Infrastructure Intern",
+    role: "DevOps & Cloud Infrastructure Intern (Part-Time Contract)",
     location: "Remote",
     dates: "May 2026 – Aug 2026",
     summary:
       "Worked on the infrastructure side of a climate-data platform — CI/CD pipelines, a database migration, and a production security audit.",
     bullets: [
-      "Architected containerized CI/CD pipelines using Docker, GitHub Actions, and Linux, automating multi-environment deployments, reducing production release regressions by 40%, and saving $3.2K/year in staging overhead.",
-      "Engineered a Supabase/PostgreSQL migration for 138+ records, restructuring Airtable data across 8 normalized tables/views and building a PostgREST-backed migration pipeline for web and mobile clients.",
-      "Audited production API and infrastructure security, identifying 29 actionable issues across JWT, CORS, secrets management, Docker networking, CI/CD, backups, and monitoring.",
+      "Architected and owned containerized CI/CD infrastructure using Docker, GitHub Actions, and Linux, automating multi-environment deployments to reduce production regressions by 40% and slash $3.2K/year in staging overhead.",
+      "Engineered a zero-downtime Supabase/PostgreSQL migration pipeline for 138,000+ records, restructuring legacy data across 8 normalized tables and building PostgREST-backed APIs for web and mobile synchronization.",
+      "Audited and hardened production infrastructure security across JWT authentication, CORS, secrets management, and isolated Docker networking, identifying and remediating 29 core exposure vectors.",
     ],
     tags: ["Docker", "GitHub Actions", "Linux", "PostgreSQL", "Supabase", "CI/CD"],
     logo: "/images/logos/sound-of-earth.png",
   },
   {
     company: "Boardwalk Labs",
-    role: "Software Engineering Intern",
+    role: "Software Engineering Intern (Part-Time Contract)",
     location: "Remote",
     dates: "June 2026 – Present",
     summary:
       "Building LLM pipelines and document-ingestion infrastructure for OctoPilot AI, and leading its Flutter frontend.",
     bullets: [
-      "Designed and deployed Python-based LLM pipelines and semantic knowledge graphs, automating AI content-processing workflows and reducing manual processing time by 40%.",
-      "Built a Python/FastAPI document-ingestion API for downstream LLM/RAG workflows, supporting 3 file formats (PDF, DOCX, PPTX) with text normalization, encrypted/corrupt-file handling, automated tests, and chunking-ready output.",
-      "Led Flutter/Dart development across 20+ reusable components and AI learning workflows, eliminating 15+ cross-component regressions while standardizing cross-platform UI state and theming across desktop and mobile surfaces.",
+      "Building and shipping production learning workflows for OctoPilot AI in Flutter/Dart, spanning AI study plans, concept mapping, analytics, and responsive desktop/mobile experiences; helping reduce projected delivery from ~4 weeks to ~2 weeks (~50%).",
+      "Engineering an end-to-end AI writing pipeline across Go, Python, and Flutter, integrating streamed LLM generation, multi-agent orchestration, persistence, credit accounting, and save/restore flows.",
+      "Developing a production Python/FastAPI document-ingestion service for downstream LLM/RAG pipelines, supporting 3 formats (PDF, DOCX, PPTX) with MIME/extension routing, normalization, encrypted/corrupt-file handling, and 8 automated tests.",
     ],
-    tags: ["Python", "FastAPI", "LLM Pipelines", "Flutter", "Dart"],
+    tags: ["Python", "Go", "FastAPI", "LLM Pipelines", "Flutter", "Dart"],
     logo: "/images/logos/boardwalk-labs.png",
   },
   {
@@ -105,9 +105,9 @@ export const experience = [
     summary:
       "One-on-one and small-group tutoring across core CS and math courses, focused on building durable problem-solving skills rather than just answers.",
     bullets: [
-      "Mentored 50+ students across 100+ tutoring sessions in programming, algorithms, recursion, debugging, mathematics, and structured problem solving.",
-      "Helped students trace code, identify logical errors, and develop solutions independently.",
-      "Explained technical and mathematical concepts from first principles and adapted explanations to different experience levels.",
+      "Mentored 50+ students across 100+ sessions in introductory programming and mathematics, translating complex concepts into clear, structured problem-solving strategies.",
+      "Provided individualized tutoring in C++, pre-calculus, algebra, and statistics, adapting explanations and practice problems to students' skill levels and coursework.",
+      "Guided students through programming fundamentals, debugging, and code tracing, helping them identify errors and develop more systematic approaches to solving problems.",
     ],
     tags: ["Teaching", "DSA", "Algorithms", "Mentorship"],
     logo: "/images/logos/kingsborough.png",
