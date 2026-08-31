@@ -39,9 +39,9 @@ export const about = {
     {
       school: "New York University — Tandon School of Engineering",
       degree: "B.S. in Computer Science (Minor in Mathematics)",
-      meta: "Expected Graduation: May 2028",
+      meta: "Expected Graduation: May 2029",
       honors: [],
-      courses: ["Linear Algebra", "Discrete Mathematics", "Python Programming", "Calculus II", "Arabic I", "Data Structures & Algorithms — Placement Pending"],
+      courses: ["Data Structures & Algorithms", "Linear Algebra", "Discrete Mathematics", "Python Programming", "Calculus II", "Arabic I"],
     },
     {
       school: "Kingsborough Community College",
