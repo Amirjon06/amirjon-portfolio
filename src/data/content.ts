@@ -316,7 +316,7 @@ export const sev0Project = {
   liveDemo: null as string | null,
 };
 
-export const projects = [sev0Project, inProgressProject, ghostMirrorProject, featuredProject, patientVoiceBotProject];
+export const projects = [sev0Project, inProgressProject];
 
 // Skills — all technologies grouped by category.
 export const skills = [
