@@ -132,13 +132,13 @@ export default function ContactContent() {
                 <label htmlFor="name" className="mb-2 block font-display text-sm font-bold text-ink">
                   Name
                 </label>
-                <input id="name" name="name" type="text" required placeholder="Jane Doe" className={inputClass} />
+                <input id="name" name="name" type="text" required placeholder="Your name" className={inputClass} />
               </div>
               <div>
                 <label htmlFor="email" className="mb-2 block font-display text-sm font-bold text-ink">
                   Email
                 </label>
-                <input id="email" name="email" type="email" required placeholder="jane@email.com" className={inputClass} />
+                <input id="email" name="email" type="email" required placeholder="Your email address" className={inputClass} />
               </div>
               <div>
                 <label htmlFor="message" className="mb-2 block font-display text-sm font-bold text-ink">
@@ -149,7 +149,7 @@ export default function ContactContent() {
                   name="message"
                   rows={7}
                   required
-                  placeholder="What are you working on?"
+                  placeholder="Write your message here…"
                   className={`${inputClass} resize-y`}
                 />
               </div>
