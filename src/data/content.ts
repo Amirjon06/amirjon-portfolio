@@ -41,6 +41,7 @@ export const about = {
       degree: "B.S. in Computer Science (Minor in Mathematics)",
       meta: "Expected Graduation: May 2029",
       honors: [],
+      logo: "/images/logos/nyu.png",
       courses: ["Data Structures & Algorithms", "Linear Algebra", "Python Programming", "Discrete Mathematics", "Elementary Arabic"],
     },
     {
@@ -56,6 +57,7 @@ export const about = {
       degree: "Full Stack Web Development Certificate",
       meta: "Completed",
       honors: [],
+      logo: "/images/logos/brainstation.jpg",
       courses: [],
     },
   ],
