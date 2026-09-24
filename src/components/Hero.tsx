@@ -67,7 +67,7 @@ export default function Home() {
     { text: "Hello World.", className: "font-display font-semibold leading-[1.3] tracking-tight text-white/90 text-xl sm:text-2xl lg:text-3xl" },
     { text: "I'm Amirjon", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
     { text: "Abdunayimov.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
-    { text: "Software Engineer.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
+    { text: "Software Engineer.", className: "!mt-3 font-display font-medium leading-[1.3] tracking-tight text-white/80 text-xl sm:text-2xl lg:text-3xl" },
     {
       text: "Building backend systems, AI tooling, and cloud infrastructure that hold up in production.",
       className: "!mt-4 max-w-xl text-lg font-medium leading-snug text-white/80 sm:text-xl",
