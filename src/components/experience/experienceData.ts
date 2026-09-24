@@ -25,7 +25,7 @@ export type ExperienceEntry = {
 export const EXPERIENCES: ExperienceEntry[] = [
   {
     id: "boardwalk-labs",
-    role: "Software Engineering Intern (Part-Time Contract)",
+    role: "Software Engineering Intern",
     company: "Boardwalk Labs",
     shortCompany: "Boardwalk Labs",
     location: "Remote",
@@ -61,7 +61,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
   },
   {
     id: "sound-of-earth",
-    role: "DevOps & Cloud Infrastructure Intern (Part-Time Contract)",
+    role: "DevOps & Cloud Infrastructure Intern",
     company: "Sound of Earth",
     shortCompany: "Sound of Earth",
     location: "Remote",

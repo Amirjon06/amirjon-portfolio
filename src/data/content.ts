@@ -69,7 +69,7 @@ export const about = {
 export const experience = [
   {
     company: "Sound of Earth",
-    role: "DevOps & Cloud Infrastructure Intern (Part-Time Contract)",
+    role: "DevOps & Cloud Infrastructure Intern",
     location: "Remote",
     dates: "May 2026 – Aug 2026",
     summary:
@@ -84,7 +84,7 @@ export const experience = [
   },
   {
     company: "Boardwalk Labs",
-    role: "Software Engineering Intern (Part-Time Contract)",
+    role: "Software Engineering Intern",
     location: "Remote",
     dates: "June 2026 – Present",
     summary:
