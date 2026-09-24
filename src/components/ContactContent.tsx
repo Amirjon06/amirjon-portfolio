@@ -44,14 +44,19 @@ export default function ContactContent() {
 <>
   <div className="max-w-3xl pt-2">
     <Reveal>
+      <p className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-signal">
+        Get in touch
+      </p>
+    </Reveal>
+    <Reveal delay={0.03}>
       <h2 className="font-display text-6xl font-semibold tracking-tight text-ink md:text-7xl">
         Let&apos;s Connect
       </h2>
     </Reveal>
     <Reveal delay={0.05}>
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-        Interested in software engineering, AI systems, cloud infrastructure, or
-        collaboration opportunities? Let&apos;s talk.
+        Backend systems, AI tooling, infrastructure &mdash; if that&apos;s the kind of problem
+        you&apos;re working on, I&apos;d like to hear about it.
       </p>
     </Reveal>
   </div>
@@ -59,8 +64,8 @@ export default function ContactContent() {
         {/* Left: contact links */}
         <Reveal variant="slide-right">
           <div className="max-w-[560px]">
-            <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-signal">
-              Get in touch
+            <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted">
+              Direct contact
             </p>
             <div className="space-y-5">
               {contactLinks.map(({ icon: Icon, label, href, event, source }) => (
@@ -124,19 +129,19 @@ export default function ContactContent() {
             </p>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm text-muted">
+                <label htmlFor="name" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                   Name
                 </label>
                 <input id="name" name="name" type="text" required placeholder="Your name" className={inputClass} />
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm text-muted">
+                <label htmlFor="email" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                   Email
                 </label>
                 <input id="email" name="email" type="email" required placeholder="Your email" className={inputClass} />
               </div>
               <div>
-                <label htmlFor="message" className="mb-2 block text-sm text-muted">
+                <label htmlFor="message" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                   Message
                 </label>
                 <textarea
