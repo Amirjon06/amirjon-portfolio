@@ -84,7 +84,7 @@ export default function AboutContent() {
                   Amirjon Abdunayimov
                 </h2>
                 <p className="mt-1 text-xs text-muted">
-                  <span className="font-medium text-signal">Software Engineer</span>
+                  <span className="font-normal text-signal">Software Engineer</span>
                   <span className="mx-1.5 inline-block h-[3px] w-[3px] rounded-full bg-muted/60 align-middle" />
                   Brooklyn, NY
                 </p>
