@@ -44,7 +44,7 @@ export default function ContactContent() {
 <>
   <div className="max-w-3xl pt-2">
     <Reveal>
-      <p className="mb-4 font-mono text-xs uppercase tracking-[0.28em] text-signal">
+      <p className="mb-4 font-display text-sm font-bold text-signal">
         Get in touch
       </p>
     </Reveal>
@@ -124,24 +124,24 @@ export default function ContactContent() {
         {/* Right: form card */}
         <Reveal variant="slide-left" delay={0.08}>
           <div className="-mt-3 w-full rounded-3xl border border-white/15 bg-surface/40 p-10 backdrop-blur-xl shadow-[0_24px_70px_rgba(0,0,0,.4)]">
-            <p className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-signal">
+            <p className="mb-6 font-display text-lg font-bold text-signal">
               Send a message
             </p>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                <label htmlFor="name" className="mb-2 block font-display text-sm font-bold text-ink">
                   Name
                 </label>
                 <input id="name" name="name" type="text" required placeholder="Your name" className={inputClass} />
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                <label htmlFor="email" className="mb-2 block font-display text-sm font-bold text-ink">
                   Email
                 </label>
                 <input id="email" name="email" type="email" required placeholder="Your email" className={inputClass} />
               </div>
               <div>
-                <label htmlFor="message" className="mb-2 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
+                <label htmlFor="message" className="mb-2 block font-display text-sm font-bold text-ink">
                   Message
                 </label>
                 <textarea
