@@ -65,7 +65,8 @@ function SequentialTyped({
 export default function Home() {
   const heroLinesTyped = [
     { text: "Hello World.", className: "font-display font-semibold leading-[1.3] tracking-tight text-white/90 text-xl sm:text-2xl lg:text-3xl" },
-    { text: "I'm Amirjon Abdunayimov.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
+    { text: "I'm Amirjon", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
+    { text: "Abdunayimov.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
     { text: "Software Engineer.", className: "font-display font-bold leading-[1.3] tracking-tight text-white text-3xl sm:text-4xl lg:text-5xl xl:text-[3.75rem]" },
     {
       text: "Building backend systems, AI tooling, and cloud infrastructure that hold up in production.",
