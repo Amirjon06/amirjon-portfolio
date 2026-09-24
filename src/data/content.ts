@@ -31,7 +31,7 @@ export const heroCyclePhrases = [
 
 export const about = {
   paragraphs: [
-    "I’m a Computer Science student at NYU Tandon and a software engineer with experience across backend development, AI systems, cloud infrastructure, and developer tooling. I’m especially interested in systems where reliability, correctness, observability, and real-world behavior matter.",
+    "I study Computer Science at NYU Tandon and work as a software engineer, mostly on backend systems, AI tooling, and cloud infrastructure. I like working close to the parts of a system that actually break — the edge cases, the load, the failures nobody planned for.",
     "Currently a Software Engineering Intern at Boardwalk Labs, building LLM pipelines and document-ingestion infrastructure for OctoPilot AI. Previously a DevOps & Cloud Infrastructure Intern at Sound of Earth.",
     "I founded the AI, Coding, and Systems Club, combining hands-on engineering work with mentorship and technical community-building.",
   ],
