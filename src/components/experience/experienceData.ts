@@ -101,7 +101,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
     company: "Kingsborough Community College Learning Center",
     shortCompany: "KCC Learning Center",
     location: "Brooklyn, NY",
-    dates: "March 2026 – June 2026",
+    dates: "March 2026 – Aug 2026",
     type: "tutoring",
     accent: "#60a5fa",
     accentDim: "rgba(96,165,250,0.12)",

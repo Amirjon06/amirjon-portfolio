@@ -101,7 +101,7 @@ export const experience = [
     company: "Kingsborough Community College Learning Center",
     role: "Computer Science & Mathematics Tutor",
     location: "Brooklyn, NY",
-    dates: "March 2026 – June 2026",
+    dates: "March 2026 – Aug 2026",
     summary:
       "One-on-one and small-group tutoring across core CS and math courses, focused on building durable problem-solving skills rather than just answers.",
     bullets: [
