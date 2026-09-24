@@ -105,7 +105,7 @@ export default function AboutContent() {
 
           {/* Right — education card (refined) */}
           <div className="rounded-3xl border border-white/10 bg-surface/40 p-8 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,.3)]">
-            <p className="mb-7 font-mono text-[11px] uppercase tracking-[0.28em] text-signal">
+            <p className="mb-7 font-display text-sm font-bold text-signal">
               Education
             </p>
             <div className="space-y-7">
@@ -141,7 +141,7 @@ export default function AboutContent() {
                       )}
                       {ed.courses && ed.courses.length > 0 && (
                         <div className="mt-3">
-                          <p className="mb-2 text-[10px] uppercase tracking-wider text-muted/50">Current Coursework</p>
+                          <p className="mb-2 font-display text-xs font-bold text-muted">Current Coursework</p>
                           <div className="flex flex-wrap gap-2">
                             {ed.courses.map((c) => (
                               <span
