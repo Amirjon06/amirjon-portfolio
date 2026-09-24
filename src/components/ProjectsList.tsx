@@ -23,14 +23,9 @@ export default function ProjectsList() {
               className="group flex flex-col gap-3 border-t border-white/5 py-12 transition-colors md:flex-row md:items-baseline md:justify-between"
             >
               <div>
-                <div className="flex items-center gap-3">
-                  <h3 className="font-display text-3xl font-semibold text-ink transition-colors group-hover:text-signal md:text-4xl">
-                    {p.name}
-                  </h3>
-                  <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-xs uppercase tracking-wider text-muted">
-                    {p.status}
-                  </span>
-                </div>
+                <h3 className="font-display text-3xl font-semibold text-ink transition-colors group-hover:text-signal md:text-4xl">
+                  {p.name}
+                </h3>
                 <p className="mt-3 max-w-xl text-lg text-muted md:text-xl">{p.oneLiner}</p>
               </div>
               <ArrowUpRight size={26} className="shrink-0 text-muted transition-colors group-hover:text-signal" />
