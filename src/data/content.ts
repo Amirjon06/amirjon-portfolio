@@ -49,6 +49,7 @@ export const about = {
       meta: "September 2024 – 2026",
       honors: ["Dean's List", "Honors Program", "Phi Theta Kappa", "JKC Scholarship Semifinalist"],
       courses: [],
+      logo: "/images/logos/kingsborough.png",
     },
     {
       school: "BrainStation",

@@ -115,8 +115,12 @@ export default function AboutContent() {
                   className={i < about.education.length - 1 ? "border-b border-white/[0.06] pb-7" : ""}
                 >
                   <div className="flex items-start gap-3.5">
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] ring-1 ring-white/10">
-                      {EDU_ICONS[i]}
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/[0.05] ring-1 ring-white/10">
+                      {ed.logo ? (
+                        <Image src={ed.logo} alt={ed.school} width={36} height={36} className="h-full w-full object-cover" />
+                      ) : (
+                        EDU_ICONS[i]
+                      )}
                     </span>
                     <div className="min-w-0 flex-1">
                       <p className="text-[15px] font-semibold leading-snug text-ink">{ed.school}</p>
