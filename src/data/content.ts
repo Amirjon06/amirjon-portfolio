@@ -86,15 +86,15 @@ export const experience = [
     company: "Boardwalk Labs",
     role: "Software Engineering Intern",
     location: "Remote",
-    dates: "June 2026 – Present",
+    dates: "June 2026 – Sep 2026",
     summary:
-      "Building LLM pipelines and document-ingestion infrastructure for OctoPilot AI, and leading its Flutter frontend.",
+      "Built backend and infrastructure systems for OctoPilot AI, including event-driven microservices and a transactional credit ledger.",
     bullets: [
-      "Building and shipping production learning workflows for OctoPilot AI in Flutter/Dart, spanning AI study plans, concept mapping, analytics, and responsive desktop/mobile experiences; helping reduce projected delivery from ~4 weeks to ~2 weeks (~50%).",
-      "Engineering an end-to-end AI writing pipeline across Go, Python, and Flutter, integrating streamed LLM generation, multi-agent orchestration, persistence, credit accounting, and save/restore flows.",
-      "Developing a production Python/FastAPI document-ingestion service for downstream LLM/RAG pipelines, supporting 3 formats (PDF, DOCX, PPTX) with MIME/extension routing, normalization, encrypted/corrupt-file handling, and 8 automated tests.",
+      "Architected an event-driven Go/Python microservices engine for OctoPilot AI utilizing background worker queues and connection pooling, optimizing distributed task routing to cut end-to-end processing latency by 50%.",
+      "Engineered a fault-tolerant multi-agent execution pipeline using Redis-backed cache-aside patterns, TTL invalidation, and token-bucket rate limiting; integrated Prometheus tracking to handle long-running LLM stream failures.",
+      "Designed an ACID-compliant transactional ledger in PostgreSQL for high-concurrency credit accounting, leveraging database indexing and strict isolation levels to eliminate race conditions and slash infrastructure API leaks by 28%.",
     ],
-    tags: ["Python", "Go", "FastAPI", "LLM Pipelines", "Flutter", "Dart"],
+    tags: ["Go", "Python", "Redis", "PostgreSQL", "Prometheus"],
     logo: "/images/logos/boardwalk-labs.png",
   },
   {
