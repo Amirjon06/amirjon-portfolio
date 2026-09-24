@@ -22,7 +22,7 @@ export default function Mermaid({ chart, id }: { chart: string; id: string }) {
           lineColor: "#5EEAD4",
           secondaryColor: "#1c2433",
           tertiaryColor: "#0A0E17",
-          fontFamily: "var(--font-mono)",
+          fontFamily: "var(--font-display), sans-serif",
         },
         securityLevel: "strict",
       });
@@ -46,8 +46,8 @@ export default function Mermaid({ chart, id }: { chart: string; id: string }) {
         // eslint-disable-next-line react/no-danger
         <div dangerouslySetInnerHTML={{ __html: svg }} />
       ) : (
-        <div className="flex h-32 items-center justify-center font-mono text-xs text-muted">
-          rendering architecture diagram…
+        <div className="flex h-32 items-center justify-center font-display text-xs text-muted">
+          Rendering architecture diagram…
         </div>
       )}
     </div>

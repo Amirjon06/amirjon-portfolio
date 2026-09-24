@@ -101,7 +101,7 @@ export default function CareerConstellation() {
               boxShadow: "0 0 16px rgba(94,234,212,0.5)",
             }}
           />
-          <p className="font-mono text-xs text-muted">More experience incoming</p>
+          <p className="font-display text-xs text-muted">More experience incoming</p>
         </div>
       </motion.div>
     </div>

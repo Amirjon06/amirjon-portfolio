@@ -23,7 +23,7 @@ export default function LeadershipPage() {
                 <Users size={22} className="mb-4 text-signal" />
                 <h2 className="font-display text-2xl font-semibold text-ink md:text-3xl">{item.role}</h2>
                 <p className="mt-1.5 text-lg text-signal">{item.org}</p>
-                <p className="mt-1.5 font-mono text-sm text-muted">{item.dates}</p>
+                <p className="mt-1.5 font-display text-sm text-muted">{item.dates}</p>
                 <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">{item.description}</p>
               </div>
             </Reveal>

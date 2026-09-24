@@ -54,7 +54,7 @@ export default function Home() {
       {/* ---------------- Skills — technology constellation theme ---------------- */}
       <SectionTheme id="skills" theme="constellation">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-signal/30 to-transparent" />
-        <div className="mx-auto w-full max-w-[1380px] px-10 py-28 md:px-16 md:py-36">
+        <div className="mx-auto w-full max-w-5xl px-6 py-24 md:px-10 md:py-28">
           <SkillsSection />
         </div>
       </SectionTheme>

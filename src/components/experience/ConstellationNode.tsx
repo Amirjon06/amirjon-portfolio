@@ -14,7 +14,7 @@ type Props = {
 
 function MetricPill({ metric }: { metric: string }) {
   return (
-    <span className="ml-2 inline-flex items-center rounded-full bg-white/5 px-2 py-0.5 font-mono text-[10px] text-muted">
+    <span className="ml-2 inline-flex items-center rounded-full bg-white/5 px-2 py-0.5 font-display text-[10px] text-muted">
       {metric}
     </span>
   );
@@ -82,9 +82,9 @@ export default function ConstellationNode({ entry, index, isActive, isLeft }: Pr
                 {entry.shortCompany}
               </p>
               <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span className="font-mono text-xs text-muted">{entry.dates}</span>
-                <span className="font-mono text-xs text-muted/50">·</span>
-                <span className="font-mono text-xs text-muted">{entry.location}</span>
+                <span className="font-display text-xs text-muted">{entry.dates}</span>
+                <span className="font-display text-xs text-muted/50">·</span>
+                <span className="font-display text-xs text-muted">{entry.location}</span>
               </div>
             </div>
           </div>

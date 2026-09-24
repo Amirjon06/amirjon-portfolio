@@ -64,7 +64,7 @@ export default function ContactContent() {
         {/* Left: contact links */}
         <Reveal variant="slide-right">
           <div className="max-w-[560px]">
-            <p className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            <p className="mb-5 font-display text-sm font-semibold text-muted">
               Direct contact
             </p>
             <div className="space-y-5">

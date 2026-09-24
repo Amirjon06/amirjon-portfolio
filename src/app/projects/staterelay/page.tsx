@@ -26,7 +26,7 @@ export default function StateRelayPage() {
       <Reveal delay={0.05}>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <h1 className="font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">{g.name}</h1>
-          <span className="rounded-full border border-accent/30 px-3 py-1 font-mono text-xs uppercase tracking-wider text-accent">
+          <span className="rounded-full border border-accent/30 px-3 py-1 font-display text-xs text-accent">
             {g.statusBadge}
           </span>
         </div>
@@ -50,21 +50,21 @@ export default function StateRelayPage() {
       <div className="mt-16 space-y-14">
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Problem</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Problem</h2>
             <p className="mt-3 text-lg leading-relaxed text-muted">{g.problem}</p>
           </section>
         </Reveal>
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Overview</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Overview</h2>
             <p className="mt-3 text-lg leading-relaxed text-muted">{g.vision}</p>
           </section>
         </Reveal>
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Engineering Challenges</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Engineering Challenges</h2>
             <ul className="mt-3 space-y-2">
               {g.challenges.map((c, idx) => (
                 <li key={idx} className="flex gap-3 text-base leading-relaxed text-muted">
@@ -78,7 +78,7 @@ export default function StateRelayPage() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Stack</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Stack</h2>
             <div className="mt-3 flex flex-wrap gap-2">
               {g.plannedStack.map((s) => (
                 <span key={s} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
@@ -91,7 +91,7 @@ export default function StateRelayPage() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Implementation Status</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Implementation Status</h2>
             <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
               {g.roadmap.map((r) => (
                 <li
@@ -110,7 +110,7 @@ export default function StateRelayPage() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Architecture</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Architecture</h2>
             <div className="mt-4 space-y-8">
               {g.diagrams.map((d) => (
                 <div key={d.title}>

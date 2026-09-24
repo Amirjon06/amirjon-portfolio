@@ -62,6 +62,10 @@ const LUCIDE_ICONS: Record<string, LucideIcon> = {
   "TLS / mTLS":                Lock,
 };
 
+export function getSkillAccent(name: string, fallback = "#5EEAD4") {
+  return SI_ICONS[name]?.color ?? fallback;
+}
+
 export default function SkillIcon({
   name,
   className,

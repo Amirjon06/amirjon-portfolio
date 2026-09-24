@@ -50,7 +50,7 @@ function StatCard({ label, value }: { label: string; value: string | number }) {
   return (
     <div className="glass rounded-xl p-5 text-center">
       <p className="font-display text-2xl font-semibold text-signal md:text-3xl">{value}</p>
-      <p className="mt-1 font-mono text-xs text-muted">{label}</p>
+      <p className="mt-1 font-display text-xs text-muted">{label}</p>
     </div>
   );
 }
@@ -117,7 +117,7 @@ export default function DashboardPage() {
             <Lock size={18} />
             <h1 className="font-display text-lg font-semibold text-ink">Private Analytics</h1>
           </div>
-          <p className="mb-4 font-mono text-xs text-muted">
+          <p className="mb-4 font-display text-xs text-muted">
             Enter the dashboard password (ANALYTICS_PASSWORD env var) to continue.
           </p>
           <input
@@ -131,11 +131,11 @@ export default function DashboardPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-accent px-4 py-2 font-mono text-sm font-medium text-bg transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+            className="w-full rounded-lg bg-accent px-4 py-2 font-display text-sm font-medium text-bg transition-transform hover:-translate-y-0.5 disabled:opacity-60"
           >
             {loading ? "Checking…" : "Unlock"}
           </button>
-          {error && <p className="mt-3 font-mono text-xs text-[#ff5f56]">{error}</p>}
+          {error && <p className="mt-3 font-display text-xs text-[#ff5f56]">{error}</p>}
         </form>
       </main>
     );
@@ -148,12 +148,12 @@ export default function DashboardPage() {
       <div className="mx-auto max-w-6xl">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="section-label">private_dashboard</p>
+            <p className="section-label">Private dashboard</p>
             <h1 className="mt-2 font-display text-3xl font-semibold text-ink">Analytics</h1>
           </div>
           <button
             onClick={() => fetchData(password)}
-            className="glass flex items-center gap-2 rounded-lg px-4 py-2 font-mono text-xs text-ink transition-transform hover:-translate-y-0.5"
+            className="glass flex items-center gap-2 rounded-lg px-4 py-2 font-display text-xs text-ink transition-transform hover:-translate-y-0.5"
           >
             <RefreshCw size={14} className={loading ? "animate-spin" : ""} /> Refresh
           </button>
@@ -173,7 +173,7 @@ export default function DashboardPage() {
 
         {/* Timeline */}
         <div className="glass mb-8 rounded-2xl p-6">
-          <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">Visitors — last 14 days</p>
+          <p className="mb-4 font-display text-sm font-semibold text-accent">Visitors — last 14 days</p>
           <ResponsiveContainer width="100%" height={240}>
             <LineChart data={data.timeline}>
               <CartesianGrid stroke="#222B3D" strokeDasharray="3 3" />
@@ -191,7 +191,7 @@ export default function DashboardPage() {
         <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Traffic sources */}
           <div className="glass rounded-2xl p-6">
-            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">Traffic Source</p>
+            <p className="mb-4 font-display text-sm font-semibold text-accent">Traffic Source</p>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={data.trafficSources}>
                 <CartesianGrid stroke="#222B3D" strokeDasharray="3 3" />
@@ -205,7 +205,7 @@ export default function DashboardPage() {
 
           {/* Device types */}
           <div className="glass rounded-2xl p-6">
-            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">Device Type</p>
+            <p className="mb-4 font-display text-sm font-semibold text-accent">Device Type</p>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
                 <Pie data={data.deviceTypes} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={70} label>
@@ -220,7 +220,7 @@ export default function DashboardPage() {
 
           {/* Locations */}
           <div className="glass rounded-2xl p-6">
-            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">Approximate Location</p>
+            <p className="mb-4 font-display text-sm font-semibold text-accent">Approximate Location</p>
             <ResponsiveContainer width="100%" height={200}>
               <BarChart data={data.locations} layout="vertical" margin={{ left: 10 }}>
                 <CartesianGrid stroke="#222B3D" strokeDasharray="3 3" />
@@ -236,13 +236,13 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Project views */}
           <div className="glass rounded-2xl p-6 md:col-span-1">
-            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">Project Views</p>
-            {data.projectViews.length === 0 && <p className="font-mono text-xs text-muted">No project views yet.</p>}
+            <p className="mb-4 font-display text-sm font-semibold text-accent">Project Views</p>
+            {data.projectViews.length === 0 && <p className="font-display text-xs text-muted">No project views yet.</p>}
             <ul className="space-y-2">
               {data.projectViews.map((p) => (
                 <li key={p.name} className="flex items-center justify-between rounded-lg border border-border bg-surface px-3 py-2">
-                  <span className="font-mono text-sm text-ink">{p.name}</span>
-                  <span className="font-mono text-xs text-signal">{p.value}</span>
+                  <span className="font-display text-sm text-ink">{p.name}</span>
+                  <span className="font-display text-xs text-signal">{p.value}</span>
                 </li>
               ))}
             </ul>
@@ -250,8 +250,8 @@ export default function DashboardPage() {
 
           {/* Recent activity feed */}
           <div className="glass rounded-2xl p-6 md:col-span-2">
-            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">Recent Activity</p>
-            {data.recentActivity.length === 0 && <p className="font-mono text-xs text-muted">No activity yet.</p>}
+            <p className="mb-4 font-display text-sm font-semibold text-accent">Recent Activity</p>
+            {data.recentActivity.length === 0 && <p className="font-display text-xs text-muted">No activity yet.</p>}
             <ul className="space-y-2">
               {data.recentActivity.map((a, i) => {
                 const Icon = ACTIVITY_ICONS[a.label] ?? FileText;
@@ -259,8 +259,8 @@ export default function DashboardPage() {
                   <li key={i} className="flex items-center gap-3 rounded-lg border border-border bg-surface px-3 py-2">
                     <Icon size={16} className="shrink-0 text-signal" />
                     <div className="flex-1">
-                      <p className="font-mono text-sm text-ink">{a.label}</p>
-                      <p className="font-mono text-[10px] text-muted">
+                      <p className="font-display text-sm text-ink">{a.label}</p>
+                      <p className="font-display text-[10px] text-muted">
                         {new Date(a.timestamp).toLocaleString()} {a.country && a.country !== "Unknown" ? `· ${a.country}` : ""} {a.device ? `· ${a.device}` : ""}
                       </p>
                     </div>

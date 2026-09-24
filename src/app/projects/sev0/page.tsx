@@ -26,7 +26,7 @@ export default function Sev0Page() {
       <Reveal delay={0.05}>
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <h1 className="font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">{p.name}</h1>
-          <span className="rounded-full border border-signal/30 px-3 py-1 font-mono text-xs uppercase tracking-wider text-signal">
+          <span className="rounded-full border border-signal/30 px-3 py-1 font-display text-xs text-signal">
             {p.status}
           </span>
         </div>
@@ -61,14 +61,14 @@ export default function Sev0Page() {
       <div className="mt-16 space-y-14">
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Problem</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Problem</h2>
             <p className="mt-3 text-lg leading-relaxed text-muted">{p.problem}</p>
           </section>
         </Reveal>
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Challenges</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Challenges</h2>
             <ul className="mt-3 space-y-2">
               {p.challenges.map((c, idx) => (
                 <li key={idx} className="flex gap-3 text-base leading-relaxed text-muted">
@@ -82,14 +82,14 @@ export default function Sev0Page() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Solution</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Solution</h2>
             <p className="mt-3 text-lg leading-relaxed text-muted">{p.solution}</p>
           </section>
         </Reveal>
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Architecture</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Architecture</h2>
             <p className="mt-3 text-base leading-relaxed text-muted">{p.architectureNote}</p>
             <div className="mt-4">
               <Mermaid chart={p.mermaid} id={`mermaid-${p.slug}`} />
@@ -99,7 +99,7 @@ export default function Sev0Page() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Stack</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Stack</h2>
             <div className="mt-3 flex flex-wrap gap-2">
               {p.stack.map((s) => (
                 <span key={s} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted">
@@ -112,7 +112,7 @@ export default function Sev0Page() {
 
         <Reveal>
           <section>
-            <h2 className="font-mono text-xs uppercase tracking-wider text-accent">Highlights</h2>
+            <h2 className="font-display text-sm font-semibold text-accent">Highlights</h2>
             <ul className="mt-3 space-y-2">
               {p.highlights.map((h, idx) => (
                 <li key={idx} className="flex gap-3 text-base leading-relaxed text-muted">

@@ -173,7 +173,7 @@ export default function Nav() {
               </Link>
             ))}
             <div className="flex items-center gap-3 border-t border-white/5 pt-4">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-white/40">Theme</span>
+              <span className="font-display text-xs font-semibold text-white/60">Theme</span>
               <button
                 onClick={() => {
                   const idx  = THEMES.findIndex(t => t.id === activeTheme);

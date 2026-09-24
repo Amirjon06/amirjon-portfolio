@@ -31,17 +31,13 @@ body {
   background-size: 44px 44px;
 }
 
-/* Section label, comment-style */
+/* Shared UI label — matches the contact section's display font. */
 .section-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: normal;
   color: #5eead4;
-}
-
-.section-label::before {
-  content: "// ";
-  color: #525d75;
 }
 
 /* Glass card */

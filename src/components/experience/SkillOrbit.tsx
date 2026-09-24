@@ -34,7 +34,7 @@ export default function SkillOrbit({
             duration: 0.4,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs backdrop-blur-sm"
+          className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-display text-xs backdrop-blur-sm"
           style={{
             borderColor: `${skill.color}40`,
             backgroundColor: `${skill.color}0d`,
