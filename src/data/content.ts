@@ -41,7 +41,7 @@ export const about = {
       degree: "B.S. in Computer Science (Minor in Mathematics)",
       meta: "Expected Graduation: May 2029",
       honors: [],
-      courses: ["Data Structures & Algorithms", "Discrete Mathematics", "Linear Algebra", "Probability & Statistics"],
+      courses: ["Data Structures & Algorithms", "Linear Algebra", "Python Programming", "Discrete Mathematics", "Elementary Arabic"],
     },
     {
       school: "Kingsborough Community College",
