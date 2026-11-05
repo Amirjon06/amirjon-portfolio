@@ -104,13 +104,11 @@ export const experience = [
     company: "Kingsborough Community College Learning Center",
     role: "Computer Science & Mathematics Tutor",
     location: "Brooklyn, NY",
-    dates: "March 2026 – Aug 2026",
+    dates: "May 2026 – Aug 2026",
     summary:
       "One-on-one and small-group tutoring across core CS and math courses, focused on building durable problem-solving skills rather than just answers.",
     bullets: [
-      "Mentored 50+ students across 100+ sessions in introductory programming and mathematics, translating complex concepts into clear, structured problem-solving strategies.",
-      "Provided individualized tutoring in C++, pre-calculus, algebra, and statistics, adapting explanations and practice problems to students' skill levels and coursework.",
-      "Guided students through programming fundamentals, debugging, and code tracing, helping them identify errors and develop more systematic approaches to solving problems.",
+      "Tutored students in C++, algebra, pre-calculus, and statistics, using code tracing, debugging exercises, and worked examples to strengthen independent problem-solving skills.",
     ],
     tags: ["Teaching", "DSA", "Algorithms", "Mentorship"],
     logo: "/images/logos/kingsborough.png",

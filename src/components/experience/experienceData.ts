@@ -99,7 +99,7 @@ export const EXPERIENCES: ExperienceEntry[] = [
     company: "Kingsborough Community College Learning Center",
     shortCompany: "KCC Learning Center",
     location: "Brooklyn, NY",
-    dates: "March 2026 – Aug 2026",
+    dates: "May 2026 – Aug 2026",
     type: "tutoring",
     accent: "#60a5fa",
     accentDim: "rgba(96,165,250,0.12)",
@@ -107,16 +107,8 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Mentored computer science and mathematics students through structured technical instruction, helping them strengthen algorithmic thinking, debugging skills, and software engineering fundamentals.",
     bullets: [
       {
-        text: "Mentored 50+ students across 100+ sessions in introductory programming and mathematics, translating complex concepts into clear, structured problem-solving strategies.",
-        metric: "100+ sessions",
-      },
-      {
-        text: "Provided individualized tutoring in C++, pre-calculus, algebra, and statistics, adapting explanations and practice problems to students' skill levels and coursework.",
+        text: "Tutored students in C++, algebra, pre-calculus, and statistics, using code tracing, debugging exercises, and worked examples to strengthen independent problem-solving skills.",
         metric: "C++ & Math",
-      },
-      {
-        text: "Guided students through programming fundamentals, debugging, and code tracing, helping them identify errors and develop more systematic approaches to solving problems.",
-        metric: "Debugging & tracing",
       },
     ],
     skills: [
