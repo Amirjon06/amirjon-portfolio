@@ -42,7 +42,7 @@ export const about = {
       meta: "Expected Graduation: May 2029",
       honors: [],
       logo: "/images/logos/nyu.png",
-      courses: ["Data Structures & Algorithms", "Linear Algebra", "Python Programming", "Discrete Mathematics", "Elementary Arabic"],
+      courses: [],
     },
     {
       school: "Kingsborough Community College",
