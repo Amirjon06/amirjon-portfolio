@@ -78,9 +78,9 @@ export const experience = [
     summary:
       "Worked on the infrastructure side of a climate-data platform — CI/CD pipelines, a database migration, and a production security audit.",
     bullets: [
-      "Architected and owned containerized CI/CD infrastructure using Docker, GitHub Actions, and Linux, automating multi-environment deployments to reduce production regressions by 40% and slash $3.2K/year in staging overhead.",
-      "Engineered a zero-downtime Supabase/PostgreSQL migration pipeline for 138,000+ records, restructuring legacy data across 8 normalized tables and building PostgREST-backed APIs for web and mobile synchronization.",
-      "Audited and hardened production infrastructure security across JWT authentication, CORS, secrets management, and isolated Docker networking, identifying and remediating 29 core exposure vectors.",
+      "Built and maintained CI/CD pipelines with Docker, GitHub Actions, and Linux, automating deployments across environments to reduce production regressions by 40% and staging costs by $3.2K/year.",
+      "Built a zero-downtime Supabase/PostgreSQL migration pipeline for 138,000+ records, organizing legacy data into 8 normalized tables and developing PostgREST-backed APIs for web and mobile synchronization.",
+      "Identified and fixed 29 security issues across production infrastructure, strengthening JWT authentication, CORS configuration, secrets management, and Docker network isolation.",
     ],
     tags: ["Docker", "GitHub Actions", "Linux", "PostgreSQL", "Supabase", "CI/CD"],
     logo: "/images/logos/sound-of-earth.png",

@@ -71,16 +71,16 @@ export const EXPERIENCES: ExperienceEntry[] = [
       "Built cloud infrastructure and DevOps automation for a climate-data platform — CI/CD pipelines, a database migration, and a production security audit.",
     bullets: [
       {
-        text: "Architected and owned containerized CI/CD infrastructure using Docker, GitHub Actions, and Linux, automating multi-environment deployments to reduce production regressions by 40% and slash $3.2K/year in staging overhead.",
+        text: "Built and maintained CI/CD pipelines with Docker, GitHub Actions, and Linux, automating deployments across environments to reduce production regressions by 40% and staging costs by $3.2K/year.",
         metric: "40% fewer regressions",
       },
       {
-        text: "Engineered a zero-downtime Supabase/PostgreSQL migration pipeline for 138,000+ records, restructuring legacy data across 8 normalized tables and building PostgREST-backed APIs for web and mobile synchronization.",
+        text: "Built a zero-downtime Supabase/PostgreSQL migration pipeline for 138,000+ records, organizing legacy data into 8 normalized tables and developing PostgREST-backed APIs for web and mobile synchronization.",
         metric: "138K+ records migrated",
       },
       {
-        text: "Audited and hardened production infrastructure security across JWT authentication, CORS, secrets management, and isolated Docker networking, identifying and remediating 29 core exposure vectors.",
-        metric: "29 vectors remediated",
+        text: "Identified and fixed 29 security issues across production infrastructure, strengthening JWT authentication, CORS configuration, secrets management, and Docker network isolation.",
+        metric: "29 issues fixed",
       },
     ],
     skills: [
