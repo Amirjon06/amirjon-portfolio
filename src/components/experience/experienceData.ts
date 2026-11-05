@@ -34,26 +34,25 @@ export const EXPERIENCES: ExperienceEntry[] = [
     accent: "#c084fc",
     accentDim: "rgba(192,132,252,0.12)",
     summary:
-      "Built backend and infrastructure systems for OctoPilot AI, including event-driven microservices and a transactional credit ledger.",
+      "Backend work on OctoPilot AI: Go and Python services, credit accounting APIs, and the LLM agent pipeline.",
     bullets: [
       {
-        text: "Architected an event-driven Go/Python microservices engine for OctoPilot AI utilizing background worker queues and connection pooling, optimizing distributed task routing to cut end-to-end processing latency by 50%.",
+        text: "Built and optimized Go/Python microservices for OctoPilot AI, reducing end-to-end processing latency by 50% through background worker queues and connection pooling.",
         metric: "50% lower latency",
       },
       {
-        text: "Engineered a fault-tolerant multi-agent execution pipeline using Redis-backed cache-aside patterns, TTL invalidation, and token-bucket rate limiting; integrated Prometheus tracking to handle long-running LLM stream failures.",
-        metric: "Fault-tolerant pipeline",
+        text: "Co-developed Go credit-accounting APIs with per-user balance tracking and idempotency keys, preventing duplicate credit deductions under request retries.",
+        metric: "Idempotent credit APIs",
       },
       {
-        text: "Designed an ACID-compliant transactional ledger in PostgreSQL for high-concurrency credit accounting, leveraging database indexing and strict isolation levels to eliminate race conditions and slash infrastructure API leaks by 28%.",
-        metric: "28% fewer API leaks",
+        text: "Engineered an LLM agent execution pipeline with Redis TTL caching, token-bucket rate limiting, and Prometheus instrumentation to control request volume and detect streaming failures.",
+        metric: "Redis + Prometheus",
       },
-  ],
+    ],
     skills: [
       { name: "Go", level: 0.9, color: "#00ADD8" },
       { name: "Python", level: 0.85, color: "#3776AB" },
       { name: "Redis", level: 0.8, color: "#DC382D" },
-      { name: "PostgreSQL", level: 0.85, color: "#336791" },
       { name: "Prometheus", level: 0.75, color: "#E6522C" },
     ],
     logo: "/images/logos/boardwalk-labs.png",
